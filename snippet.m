@@ -184,6 +184,12 @@
     jarr_array1d : *.java
     int[] arr = {1, 2, 3, 4};
 
+    jarr_char : *.java
+    char[] arr = {'c', 'a', 't', 's'};
+
+    jarr_Integer: *.java
+    Integer[] arr = {1, 2, 3, 4};
+
     jarr_array2d : *.java
     int[][] arr = {
                    {1, 2, 3, 4},
@@ -450,13 +456,13 @@
         System.out.println(token);
     }
 
-    jmap_ite_Integer : *.java
+    jmap_iterator_Integer : *.java
     Map<Integer, Integer> map = new HashMap<Integer, Integer>();
     for(Map.Entry<Integer, Integer> entry : map.entrySet()){
         System.out.println("[" + entry.getKey() + " , " + entry.getValue() + "]");
     }
 
-    jmap_ite_String: *.java
+    jmap_iterator_String: *.java
     Map<String, String> map = new HashMap<String, String>();
     for(Map.Entry<String, String> entry : map.entrySet()){
         System.out.println("[" + entry.getKey() + " , " + entry.getValue() + "]");

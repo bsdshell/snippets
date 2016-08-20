@@ -184,6 +184,12 @@ autocmd BufEnter *.java iabbr <buffer> jarr_String
 autocmd BufEnter *.java iabbr <buffer> jarr_array1d 
 \<CR>int[] arr = {1, 2, 3, 4};
 
+autocmd BufEnter *.java iabbr <buffer> jarr_char 
+\<CR>char[] arr = {'c', 'a', 't', 's'};
+
+autocmd BufEnter *.java iabbr <buffer> jarr_Integer 
+\<CR>Integer[] arr = {1, 2, 3, 4};
+
 autocmd BufEnter *.java iabbr <buffer> jarr_array2d 
 \<CR>int[][] arr = {
 \<CR>{1, 2, 3, 4},
