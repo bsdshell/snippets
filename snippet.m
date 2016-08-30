@@ -1,3 +1,5 @@
+    
+
     screeninfo  : *.java,*.tex,*.h,*.m
     -(void)checkDevice{
         CGSize size = [[UIScreen mainScreen] bounds].size;
@@ -67,8 +69,12 @@
      scale =[2.000000]
      --------------------------------
 
+
     recc : *.h,*.m
     CGRect rect = CGRectMake(0, 0, 10, 10);
+
+
+
 
     pot  : *.h,*.m
     CGPoint point = CGPointMake(1, 2);
@@ -393,8 +399,18 @@
         Print.p(queue.poll());
     }
 
+    jite_Iterator : *.java
+    List<String> list = ArrayList<String>(); 
+    Iterator<String> ite = list.iterator();
+
     jpriority_PriorityQueue: *.java 
     Queue<String> queue = new PriorityQueue<String>(); 
+
+    jset_Integer: *.java
+    Set<String> set = new HashSet<String>(Arrays.asList(1, 2));
+
+    jset_String: *.java
+    Set<Integer> set = new HashSet<Integer>(Arrays.asList("cat", "dog"));
 
     jlist_Node: *.java 
     List<Node> list = new ArrayList<Node>();
@@ -410,6 +426,12 @@
     for(String s : list){
         Print.pl(s);
     }
+
+    jlist2d_Integer: *.java 
+    List<ArrayList<Integer>> list2d = new ArrayList<ArrayList<Integer>>();
+
+    jlist2d_String: *.java 
+    List<ArrayList<String>> list2d = new ArrayList<ArrayList<String>>();
 
     jran_random: *.java 
     Random ran = new Random();

@@ -393,8 +393,18 @@ autocmd BufEnter *.java iabbr <buffer> jpriority_queue_full_example
 \<CR>Print.p(queue.poll());
 \<CR>}
 
+autocmd BufEnter *.java iabbr <buffer> jite_Iterator 
+\<CR>List<String> list = ArrayList<String>();
+\<CR>Iterator<String> ite = list.iterator();
+
 autocmd BufEnter *.java iabbr <buffer> jpriority_PriorityQueue 
 \<CR>Queue<String> queue = new PriorityQueue<String>();
+
+autocmd BufEnter *.java iabbr <buffer> jset_Integer 
+\<CR>Set<String> set = new HashSet<String>(Arrays.asList(1, 2));
+
+autocmd BufEnter *.java iabbr <buffer> jset_String 
+\<CR>Set<Integer> set = new HashSet<Integer>(Arrays.asList("cat", "dog"));
 
 autocmd BufEnter *.java iabbr <buffer> jlist_Node 
 \<CR>List<Node> list = new ArrayList<Node>();
@@ -410,6 +420,12 @@ autocmd BufEnter *.java iabbr <buffer> jlist_Iterator
 \<CR>for(String s : list){
 \<CR>Print.pl(s);
 \<CR>}
+
+autocmd BufEnter *.java iabbr <buffer> jlist2d_Integer 
+\<CR>List<ArrayList<Integer>> list2d = new ArrayList<ArrayList<Integer>>();
+
+autocmd BufEnter *.java iabbr <buffer> jlist2d_String 
+\<CR>List<ArrayList<String>> list2d = new ArrayList<ArrayList<String>>();
 
 autocmd BufEnter *.java iabbr <buffer> jran_random 
 \<CR>Random ran = new Random();
@@ -456,13 +472,13 @@ autocmd BufEnter *.java iabbr <buffer> jtoken
 \<CR>System.out.println(token);
 \<CR>}
 
-autocmd BufEnter *.java iabbr <buffer> jmap_ite_Integer 
+autocmd BufEnter *.java iabbr <buffer> jmap_iterator_Integer 
 \<CR>Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 \<CR>for(Map.Entry<Integer, Integer> entry : map.entrySet()){
 \<CR>System.out.println("[" + entry.getKey() + " , " + entry.getValue() + "]");
 \<CR>}
 
-autocmd BufEnter *.java iabbr <buffer> jmap_ite_String 
+autocmd BufEnter *.java iabbr <buffer> jmap_iterator_String 
 \<CR>Map<String, String> map = new HashMap<String, String>();
 \<CR>for(Map.Entry<String, String> entry : map.entrySet()){
 \<CR>System.out.println("[" + entry.getKey() + " , " + entry.getValue() + "]");
