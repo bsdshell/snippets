@@ -178,6 +178,16 @@ autocmd BufEnter *.java iabbr <buffer> jmain_main_method
 \<CR>}
 \<CR>}
 
+autocmd BufEnter *.java iabbr <buffer> jarr_to_set_Integer 
+\<CR>Integer[] arr = {1, 2, 3, 4};
+\<CR>Set<Integer> set = new HashSet<Integer>(Arrays.asList(arr));
+\<CR>for(Integer s: set) Print.p(s);
+
+autocmd BufEnter *.java iabbr <buffer> jarr_to_set_String 
+\<CR>String[] arr1 = {"Tesla", "autopilot", "fatal incident"};
+\<CR>Set<String> sset = new HashSet<>(Arrays.asList(arr1));
+\<CR>for(String s: sset) Print.p(s);
+
 autocmd BufEnter *.java iabbr <buffer> jarr_String 
 \<CR>String[] arr = {"techie", "dangling", "cat", "scene", "ancestor", "scene", "descend", "descended", "sibling", "dangling"};
 
@@ -187,8 +197,24 @@ autocmd BufEnter *.java iabbr <buffer> jarr_array1d
 autocmd BufEnter *.java iabbr <buffer> jarr_char 
 \<CR>char[] arr = {'c', 'a', 't', 's'};
 
+autocmd BufEnter *.java iabbr <buffer> jarr_Character 
+\<CR>Character[] arr = {'c', 'a', 't', 's'};
+
 autocmd BufEnter *.java iabbr <buffer> jarr_Integer 
 \<CR>Integer[] arr = {1, 2, 3, 4};
+
+autocmd BufEnter *.java iabbr <buffer> jarr_int 
+\<CR>int[] arr = {1, 2, 3, 4};
+
+autocmd BufEnter *.java iabbr <buffer> jarr_arr2d_4x4_1_to_n 
+\<CR>int[][] arr = {
+\<CR>{ 1,   2,   3,  4},
+\<CR>{ 5,   6,   7,  8},
+\<CR>{ 9,   10,  11, 12},
+\<CR>{ 13,  14,  15, 16},
+\<CR>};
+\<CR>int height = arr2d.length;
+\<CR>int width = arr2d[0].length;
 
 autocmd BufEnter *.java iabbr <buffer> jarr_array2d 
 \<CR>int[][] arr = {
@@ -405,6 +431,29 @@ autocmd BufEnter *.java iabbr <buffer> jset_Integer
 
 autocmd BufEnter *.java iabbr <buffer> jset_String 
 \<CR>Set<Integer> set = new HashSet<Integer>(Arrays.asList("cat", "dog"));
+
+autocmd BufEnter jthrow_throw_new_IllegalArgumentException iabbr <buffer> jthrow_throw_new_IllegalArgumentException 
+\<CR>throw new IllegalArgumentException("str must be not null.");
+
+autocmd BufEnter *.java iabbr <buffer> jlist_to_iterator_Integer 
+\<CR>List<Integer> list = Arrays.asList(1, 2, 3);
+\<CR>Iterator ite = list.iterator();
+\<CR>while(ite.hasNext()){
+\<CR>Print.p(ite.next());
+\<CR>}
+
+autocmd BufEnter *.java iabbr <buffer> jlist_to_iterator_String 
+\<CR>List<String> list = Arrays.asList("cat", "cow", "crab", "camel", "chowchow");
+\<CR>Iterator ite = list.iterator();
+\<CR>while(ite.hasNext()){
+\<CR>Print.p(ite.next());
+\<CR>}
+
+autocmd BufEnter *.java iabbr <buffer> jlist_Integer_init 
+\<CR>List<Integer> list = Arrays.asList(1, 2, 3);
+
+autocmd BufEnter *.java iabbr <buffer> jlist_String_init 
+\<CR>List<String> list = Arrays.asList("cat", "dog", "cow");
 
 autocmd BufEnter *.java iabbr <buffer> jlist_Node 
 \<CR>List<Node> list = new ArrayList<Node>();

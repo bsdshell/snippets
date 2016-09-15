@@ -1,5 +1,3 @@
-    
-
     screeninfo  : *.java,*.tex,*.h,*.m
     -(void)checkDevice{
         CGSize size = [[UIScreen mainScreen] bounds].size;
@@ -184,6 +182,17 @@
         }
     }
 
+    jarr_to_set_Integer: *.java
+    Integer[] arr = {1, 2, 3, 4}; 
+    Set<Integer> set = new HashSet<Integer>(Arrays.asList(arr));
+    for(Integer s: set) Print.p(s);
+
+
+    jarr_to_set_String: *.java
+    String[] arr1 = {"Tesla", "autopilot", "fatal incident"}; 
+    Set<String> sset = new HashSet<>(Arrays.asList(arr1));
+    for(String s: sset) Print.p(s);
+
     jarr_String : *.java
     String[] arr = {"techie", "dangling", "cat", "scene", "ancestor", "scene", "descend", "descended", "sibling", "dangling"}; 
 
@@ -193,8 +202,25 @@
     jarr_char : *.java
     char[] arr = {'c', 'a', 't', 's'};
 
+    jarr_Character : *.java
+    Character[] arr = {'c', 'a', 't', 's'};
+
+
     jarr_Integer: *.java
     Integer[] arr = {1, 2, 3, 4};
+
+    jarr_int: *.java
+    int[] arr = {1, 2, 3, 4};
+
+    jarr_arr2d_4x4_1_to_n : *.java
+    int[][] arr = {
+                   { 1,   2,   3,  4},
+                   { 5,   6,   7,  8},
+                   { 9,   10,  11, 12},
+                   { 13,  14,  15, 16},
+                  };
+    int height = arr2d.length;
+    int width = arr2d[0].length;
 
     jarr_array2d : *.java
     int[][] arr = {
@@ -411,6 +437,31 @@
 
     jset_String: *.java
     Set<Integer> set = new HashSet<Integer>(Arrays.asList("cat", "dog"));
+
+    jthrow_throw_new_IllegalArgumentException
+    throw new IllegalArgumentException("str must be not null.");
+
+    jlist_to_iterator_Integer: *.java 
+    List<Integer> list = Arrays.asList(1, 2, 3); 
+    Iterator ite = list.iterator();
+    while(ite.hasNext()){
+        Print.p(ite.next());
+    }
+
+    jlist_to_iterator_String: *.java 
+    List<String> list = Arrays.asList("cat", "cow", "crab", "camel", "chowchow"); 
+    Iterator ite = list.iterator();
+    while(ite.hasNext()){
+        Print.p(ite.next());
+    }
+
+
+    jlist_Integer_init: *.java 
+    List<Integer> list = Arrays.asList(1, 2, 3); 
+
+
+    jlist_String_init: *.java 
+    List<String> list = Arrays.asList("cat", "dog", "cow"); 
 
     jlist_Node: *.java 
     List<Node> list = new ArrayList<Node>();
