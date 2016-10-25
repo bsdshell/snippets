@@ -1,3 +1,95 @@
+    vdb  : *.vimrc
+    echo '1[' . &completefunc .']' . '2[' . &completefunc .']'
+    3sleep
+    
+
+    bigo : *.tex,*.html 
+    $\mathcal{O}(\log{}n)$
+    $\mathcal{O}(n)$
+    $\mathcal{O}(n\log{}n)$
+    $\mathcal{O}(n^2)$
+    $\mathcal{O}(2^n)$
+
+    mat(  : *.tex,*.html 
+    \[ 
+        \left( \begin{array}{ccc}
+        a & b & c \\
+        d & e & f \\
+        g & h & i \end{array} \right)
+    \]
+
+    matv : *.tex,*.html 
+    \[ 
+        \left\| \begin{array}{ccc}
+        a & b & c \\
+        d & e & f \\
+        g & h & i \end{array} \right\| 
+    \]
+
+    lenumerate : *.tex,*.html
+    \begin{enumerate}
+    \item xxx 
+    \end{enumerate}
+
+    litemize : *.tex,*.html
+    \begin{itemize}
+    \item xxx 
+    \end{itemize}
+    
+    lenumerate_nest : *.tex,*.html
+    \begin{enumerate}
+        \item Latex is cool
+        \item Haskell is fun 
+        \begin{enumerate}
+        \item Continuous 
+        \item Continue 
+        \item Consecutive 
+        \item Contingent 
+        \end{enumerate} 
+    \end{enumerate} 
+
+    lthm_newtheorem : *.tex
+    \newtheorem{theorem}{Theorem}
+    \newtheorem{defintion}{Definition}
+    \newtheorem{collorary}{Collorary}
+    \newtheorem{example}{Example}
+    \newtheorem{remark}{Remark}
+    \newtheorem{note}{Note}
+
+    lthm_theorem : *.tex
+    \begin{theorem}
+    \end{theorem}
+
+    ldef_definition: *.tex
+    \begin{defintion}
+    \end{defintion}
+    
+    lcol_collorary: *.tex
+    \begin{collorary}
+    \end{collorary}
+
+    lex_example : *.tex
+    \begin{example}
+    \end{example}
+
+    lrem_remark : *.tex 
+    \begin{remark}
+    \end{remark}
+
+    lnote_note : *.tex
+    \begin{note}
+    \end{note}
+
+    hhead : *.hs
+    import Data.Char 
+    import Data.List.Split
+    import AronModule 
+    import Text.Regex.Base.RegexLike
+    import Text.Regex
+    import System.Environment 
+    import System.Console.GetOpt
+
+
     screeninfo  : *.java,*.tex,*.h,*.m
     -(void)checkDevice{
         CGSize size = [[UIScreen mainScreen] bounds].size;
@@ -70,9 +162,6 @@
 
     recc : *.h,*.m
     CGRect rect = CGRectMake(0, 0, 10, 10);
-
-
-
 
     pot  : *.h,*.m
     CGPoint point = CGPointMake(1, 2);
@@ -198,22 +287,37 @@
 
     jarr_array1d : *.java
     int[] arr = {1, 2, 3, 4};
+    int width = arr.length;
 
     jarr_char : *.java
     char[] arr = {'c', 'a', 't', 's'};
+    int width = arr.length;
+
+    jarr_char_2d : *.java
+    char[][] arr2d = {
+        {'n', 'a', 'c'},
+        {'a', 'b', 'n'},
+        {'k', 'a', 'f'},
+    }; 
+    int height = arr2d.length;
+    int width = arr2d[0].length;
 
     jarr_Character : *.java
     Character[] arr = {'c', 'a', 't', 's'};
+    int width = arr.length;
 
 
     jarr_Integer: *.java
     Integer[] arr = {1, 2, 3, 4};
+    int width = arr.length;
+
 
     jarr_int: *.java
     int[] arr = {1, 2, 3, 4};
+    int width = arr.length;
 
     jarr_arr2d_4x4_1_to_n : *.java
-    int[][] arr = {
+    int[][] arr2d = {
                    { 1,   2,   3,  4},
                    { 5,   6,   7,  8},
                    { 9,   10,  11, 12},

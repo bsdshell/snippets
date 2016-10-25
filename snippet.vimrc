@@ -1,3 +1,93 @@
+autocmd BufEnter *.vimrc iabbr <buffer> vdb 
+\<CR>echo '1[' . &completefunc .']' . '2[' . &completefunc .']'
+\<CR>3sleep
+
+autocmd BufEnter *.tex,*.html iabbr <buffer> bigo 
+\<CR>$\mathcal{O}(\log{}n)$
+\<CR>$\mathcal{O}(n)$
+\<CR>$\mathcal{O}(n\log{}n)$
+\<CR>$\mathcal{O}(n^2)$
+\<CR>$\mathcal{O}(2^n)$
+
+autocmd BufEnter *.tex,*.html iabbr <buffer> mat( 
+\<CR>\[
+\<CR>\left( \begin{array}{ccc}
+\<CR>a & b & c \\
+\<CR>d & e & f \\
+\<CR>g & h & i \end{array} \right)
+\<CR>\]
+
+autocmd BufEnter *.tex,*.html iabbr <buffer> matv 
+\<CR>\[
+\<CR>\left\| \begin{array}{ccc}
+\<CR>a & b & c \\
+\<CR>d & e & f \\
+\<CR>g & h & i \end{array} \right\|
+\<CR>\]
+
+autocmd BufEnter *.tex,*.html iabbr <buffer> lenumerate 
+\<CR>\begin{enumerate}
+\<CR>\item xxx
+\<CR>\end{enumerate}
+
+autocmd BufEnter *.tex,*.html iabbr <buffer> litemize 
+\<CR>\begin{itemize}
+\<CR>\item xxx
+\<CR>\end{itemize}
+
+autocmd BufEnter *.tex,*.html iabbr <buffer> lenumerate_nest 
+\<CR>\begin{enumerate}
+\<CR>\item Latex is cool
+\<CR>\item Haskell is fun
+\<CR>\begin{enumerate}
+\<CR>\item Continuous
+\<CR>\item Continue
+\<CR>\item Consecutive
+\<CR>\item Contingent
+\<CR>\end{enumerate}
+\<CR>\end{enumerate}
+
+autocmd BufEnter *.tex iabbr <buffer> lthm_newtheorem 
+\<CR>\newtheorem{theorem}{Theorem}
+\<CR>\newtheorem{defintion}{Definition}
+\<CR>\newtheorem{collorary}{Collorary}
+\<CR>\newtheorem{example}{Example}
+\<CR>\newtheorem{remark}{Remark}
+\<CR>\newtheorem{note}{Note}
+
+autocmd BufEnter *.tex iabbr <buffer> lthm_theorem 
+\<CR>\begin{theorem}
+\<CR>\end{theorem}
+
+autocmd BufEnter *.tex iabbr <buffer> ldef_definition 
+\<CR>\begin{defintion}
+\<CR>\end{defintion}
+
+autocmd BufEnter *.tex iabbr <buffer> lcol_collorary 
+\<CR>\begin{collorary}
+\<CR>\end{collorary}
+
+autocmd BufEnter *.tex iabbr <buffer> lex_example 
+\<CR>\begin{example}
+\<CR>\end{example}
+
+autocmd BufEnter *.tex iabbr <buffer> lrem_remark 
+\<CR>\begin{remark}
+\<CR>\end{remark}
+
+autocmd BufEnter *.tex iabbr <buffer> lnote_note 
+\<CR>\begin{note}
+\<CR>\end{note}
+
+autocmd BufEnter *.hs iabbr <buffer> hhead 
+\<CR>import Data.Char
+\<CR>import Data.List.Split
+\<CR>import AronModule
+\<CR>import Text.Regex.Base.RegexLike
+\<CR>import Text.Regex
+\<CR>import System.Environment
+\<CR>import System.Console.GetOpt
+
 autocmd BufEnter *.java,*.tex,*.h,*.m iabbr <buffer> screeninfo 
 \<CR>-(void)checkDevice{
 \<CR>CGSize size = [[UIScreen mainScreen] bounds].size;
@@ -193,21 +283,35 @@ autocmd BufEnter *.java iabbr <buffer> jarr_String
 
 autocmd BufEnter *.java iabbr <buffer> jarr_array1d 
 \<CR>int[] arr = {1, 2, 3, 4};
+\<CR>int width = arr.length;
 
 autocmd BufEnter *.java iabbr <buffer> jarr_char 
 \<CR>char[] arr = {'c', 'a', 't', 's'};
+\<CR>int width = arr.length;
+
+autocmd BufEnter *.java iabbr <buffer> jarr_char_2d 
+\<CR>char[][] arr2d = {
+\<CR>{'n', 'a', 'c'},
+\<CR>{'a', 'b', 'n'},
+\<CR>{'k', 'a', 'f'},
+\<CR>};
+\<CR>int height = arr2d.length;
+\<CR>int width = arr2d[0].length;
 
 autocmd BufEnter *.java iabbr <buffer> jarr_Character 
 \<CR>Character[] arr = {'c', 'a', 't', 's'};
+\<CR>int width = arr.length;
 
 autocmd BufEnter *.java iabbr <buffer> jarr_Integer 
 \<CR>Integer[] arr = {1, 2, 3, 4};
+\<CR>int width = arr.length;
 
 autocmd BufEnter *.java iabbr <buffer> jarr_int 
 \<CR>int[] arr = {1, 2, 3, 4};
+\<CR>int width = arr.length;
 
 autocmd BufEnter *.java iabbr <buffer> jarr_arr2d_4x4_1_to_n 
-\<CR>int[][] arr = {
+\<CR>int[][] arr2d = {
 \<CR>{ 1,   2,   3,  4},
 \<CR>{ 5,   6,   7,  8},
 \<CR>{ 9,   10,  11, 12},
