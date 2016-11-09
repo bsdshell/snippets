@@ -2,13 +2,203 @@
     echo '1[' . &completefunc .']' . '2[' . &completefunc .']'
     3sleep
     
+    matha_mathbf_A  : *.tex,*.html 
+    \mathbf{A} 
 
+    bigo_logn : *.tex,*.html 
+    $\mathcal{O}(\log{}n)$
+
+    bigo_n : *.tex,*.html 
+    $\mathcal{O}(n)$
+
+    bigo_nlogn : *.tex,*.html 
+    $\mathcal{O}(n\log{}n)$
+
+    bigo_n2 : *.tex,*.html 
+    $\mathcal{O}(n^2)$
+
+    bigo_2n : *.tex,*.html 
+    $\mathcal{O}(2^n)$
+    
     bigo : *.tex,*.html 
     $\mathcal{O}(\log{}n)$
     $\mathcal{O}(n)$
     $\mathcal{O}(n\log{}n)$
     $\mathcal{O}(n^2)$
     $\mathcal{O}(2^n)$
+    
+    lfont_manysize : *.tex
+    \tiny
+    \scriptsize
+    \small
+    \footnotesize
+    \normalsize
+    \large
+    \Large
+    \huge
+    \Huge
+
+    lbinary_tree_color_arrow_edge : *.tex 
+    \begin{tikzpicture}[
+        edge from parent/.style={draw=red, ->, thick},
+      ]
+      \node {a}
+        child{node {b} }
+        child{node {c} };
+    \end{tikzpicture}
+
+    lbinary_tree_forest : *.tex 
+    \begin{forest}
+    for tree={circle,draw, l sep=20pt}
+    [3,red 
+        [1  
+          [4,edge label={node[midway,left] {Help!}} ] 
+          [1] 
+          [3]
+        ]
+        [2
+          [3] 
+          [2] 
+          [5]
+      ] 
+    ]
+    \end{forest}
+    % gf http://tex.stackexchange.com/questions/64148/tikz-label-on-tree-edge 
+
+    lbinary_tree_num_tizk : *.tex 
+    \begin{center}
+    \begin{tikzpicture}[level distance=0.8cm,
+    level 1/.style={sibling distance=1.7cm},
+    level 2/.style={sibling distance=1.1cm}]
+    \tikzstyle{every node}=[circle,draw]
+    \node {8}
+    child {node {3}
+    child {node {2}}
+    child {node {5}}
+    }
+    child {node {7}
+    child {node {6}}
+    child {node {9}}
+    };
+    \end{tikzpicture} 
+    \end{center}
+
+    lbinary_tree_heap_tizk : *.tex 
+    \begin{tikzpicture}[level distance=1.5cm,
+      level 1/.style={sibling distance=7cm},
+      level 2/.style={sibling distance=3.5cm}]
+      \node {[$k_0 = 0$]}
+        child {node {[$k_1 = 2k_0+1=1$]}
+          child {node {[$k_3 = 2k_1+1=3$]}}
+          child {node {[$k_4 = 2k_1+2=4$]}}
+        }
+        child {node {[$k_2 = 2k_0+2=2$]}
+          child {node {[$k_5 = 2k_2+1=5$]}}
+          child {node {[$k_6 = 2k_2+2=6$]}}
+        };
+    \end{tikzpicture}
+    
+    lbinary_tree_simple_tizk : *.tex 
+    \begin{tikzpicture}[level distance=1.5cm,
+      level 1/.style={sibling distance=3cm},
+      level 2/.style={sibling distance=1.5cm}]
+      \node {root}
+        child {node {left}
+          child {node {lleft}}
+          child {node {rleft}}
+        }
+        child {node {right}
+        child {node {lright}}
+          child {node {rright}}
+        };
+    \end{tikzpicture}
+
+    eqb : *.tex,*.html  
+    \begin{equation}
+    \begin{aligned}
+
+    eqe : *.tex,*.html 
+    \end{aligned}
+    \end{equation}
+
+    eqq : *.tex,*.html 
+    \begin{equation}
+       begin{aligned}
+       x & = y + 1
+       x & = z + 3
+       end{aligned}
+    end{equation}
+
+    gr_greek_latter : *.tex,*.html  
+    \[
+         alpha     \theta     \tau      \beta
+         vartheta  \pi        \upsilon  \gamma
+         gamma     \varpi     \phi      \delta
+         kappa     \rho       \varphi   \epsilon
+         lambda    \varrho    \chi      \varepsilon
+         mu        \sigma     \psi      \zeta
+         nu        \varsigma  \omega    \eta
+         xi        \Gamma     \Lambda   \Sigma
+         Psi       \Delta     \Upsilon  \Omega
+         Theta     \Pi        \Phi
+    \]
+
+
+     tab66_tabular : *.tex,*.html 
+     \begin{tabular}{\|c\|c\|c\|c\|c\|c\|} \hline
+     10 & 20 & 30 & 40 & 50 & 50 \\ \hline
+     22 & 28 & 38 & 48 & 58 & 50 \\ \hline
+     28 & 38 & 48 & 58 & 68 & 50 \\ \hline
+     33 & 18 & 18 & 28 & 99 & 50 \\ \hline
+     98 & 18 & 18 & 28 & 88 & 50 \\ \hline
+     98 & 18 & 18 & 28 & 88 & 50 \\ \hline
+     \end{tabular}
+
+
+     tab55_tabular : *.tex,*.html 
+     \begin{tabular}{\|c\|c\|c\|c\|c\|} \hline
+     10 & 20 & 30 & 40 & 50 \\ \hline
+     22 & 28 & 38 & 48 & 58 \\ \hline
+     28 & 38 & 48 & 58 & 68 \\ \hline
+     33 & 28 & 18 & 18 & 99 \\ \hline
+     98 & 28 & 18 & 18 & 88 \\ \hline
+     \end{tabular}
+
+     tab44_tabular : *.tex,*.html 
+     \begin{tabular}{\|c\|c\|c\|c\|} \hline
+     10 & 20 & 30 & 40 \\ \hline
+     22 & 28 & 37 & 48 \\ \hline
+     28 & 38 & 48 & 58 \\ \hline
+     33 & 10 & 11 & 12 \\ \hline
+    \end{tabular}
+
+    tab33_tabular : *.tex,*.html 
+    \begin{tabular}{\|c\|c\|c\|} \hline
+     10 & 20 & 30  \\ \hline
+     22 & 28 & 38  \\ \hline
+     28 & 38 & 48  \\ \hline
+    \end{tabular}
+
+    matn_3x3_1_to_n : *.tex,*.html  
+    A= \begin{bmatrix}
+    1 & 2 & 3\\
+    4 & 5 & 6\\
+    7 & 8 & 9
+    \end{bmatrix}
+
+    mati_3x3_identity : *.tex,*.html 
+    A= \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & 1
+    \end{bmatrix}
+
+    matb_3x3 : *.tex,*.html 
+    \begin{bmatrix}
+        1 & 2  & 3 \\
+        4 & 5  & 6 \\
+        7 & 8  & 9 \\
+    end{bmatrix}
 
     mat(  : *.tex,*.html 
     \[ 
@@ -18,13 +208,132 @@
         g & h & i \end{array} \right)
     \]
 
-    matv : *.tex,*.html 
+    matv_3x3 : *.tex,*.html 
     \[ 
         \left\| \begin{array}{ccc}
         a & b & c \\
         d & e & f \\
         g & h & i \end{array} \right\| 
     \]
+
+    mat_4x4_m_n_subscript : *.tex,*.html  
+    A_{m,n} =
+    \begin{pmatrix}
+    a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+    a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+    \vdots  & \vdots  & \ddots & \vdots  \\
+    a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+    \end{pmatrix}
+
+
+    mati_2x2_identity : *.tex,*.html 
+    A= \begin{bmatrix}
+    1 & 0\\
+    0 & 1
+    \end{bmatrix}
+
+    matn_1_to_n : *.tex,*.html 
+    A= \begin{bmatrix}
+    1 & 2\\
+    3 & 4
+    \end{bmatrix}
+
+    mat_2x2_rotate : *.tex,*.html 
+    A= \begin{bmatrix}
+    \cos(\beta) & -\sin(\beta)\\
+    \sin(\beta) & \cos(\beta)
+    \end{bmatrix}
+
+
+    limg_latex_no_float : *.tex,*.html 
+    \begin{minipage}{\linewidth}% to keep image and caption on one page
+    \makebox[\linewidth]{%        to center the image
+    \includegraphics[keepaspectratio=true,scale=0.2]{/Users/cat/myfile/github/image/quicksort3.png}}
+    \end{minipage}
+    % gf http://tex.stackexchange.com/questions/8625/force-figure-placement-in-text
+
+    limg_latex_float_figure : *.tex,*.html 
+    \begin{figure}
+    \centering
+    \includegraphics[scale=0.5,height=1cm, width=6cm]{ } 
+    \caption{This is the caption}
+    \end{figure}
+    % gf http://tex.stackexchange.com/questions/8625/force-figure-placement-in-text
+
+    detp : *.tex,*.html 
+    \[ 
+        \chi(\lambda) = \left\| \begin{array}{ccc}
+        \lambda - a & -b & -c \\
+        -d & \lambda - e & -f \\
+        -g & -h & \lambda - i \end{array} \right\| 
+    \]
+
+    det_2x2 : *.tex,*.html 
+    \[ 
+        \left\| \begin{array}{cc}
+        a & b \\
+        c & d \end{array} \right\| 
+    \]
+
+    vet_vdot_column : *.tex,*.html
+    \left[ \begin{array}{cc}
+    c_1 \\
+    c_2 \\
+    \vdots \\
+    c_n
+    \end{array}
+    \right]
+
+    lcode_listing : *.tex,*.html  
+    \begin{lstlisting}[
+      mathescape,
+      columns=fullflexible,
+      basicstyle=\fontfamily{lmvtt}\selectfont,
+    ]
+        fun(){
+        }
+    \end{lstlisting}
+
+
+    lcode_verbatim : *.tex,*.html  
+    \begin{verbatim}
+    for(int i=0; i<3; i++){
+    }
+    \end{verbatim}
+
+    lcolor_latex_color : *.tex 
+    darkGrayColor
+    lightGrayColor
+    whiteColor
+    grayColor
+    redColor
+    greenColor
+    blueColor
+    cyanColor
+    yellowColor
+    magentaColor
+    orangeColor
+    purpleColor
+    brownColor
+    clearColor
+
+    lhello_template : *.tex  
+    \documentclass{article}
+    \usepackage[tc]{titlepic}
+    \usepackage{xcolor}
+    \usepackage{graphicx}
+    \usepackage{tipa}
+    \usepackage{pagecolor,lipsum}
+    \usepackage{amsmath}
+    \usepackage{amsfonts}
+    \usepackage{amssymb}
+    \usepackage{centernot}
+    \usepackage{xcolor}
+    \usepackage{listings}
+    \begin{document}
+    \textbf{Hello World}
+    \end{document}
+
 
     lenumerate : *.tex,*.html
     \begin{enumerate}
@@ -35,6 +344,17 @@
     \begin{itemize}
     \item xxx 
     \end{itemize}
+    <ESC>2kI
+
+    litemize_without_bullets : *.tex,*.html
+    \begin{itemize}
+        \item[] There are two important functions for timer.
+        \begin{itemize}
+        \item A function is subscribed in event queue.
+        \item A event triggers your function.
+        \end{itemize}
+    \end{itemize}
+    <ESC>5kI
     
     lenumerate_nest : *.tex,*.html
     \begin{enumerate}
@@ -47,6 +367,15 @@
         \item Contingent 
         \end{enumerate} 
     \end{enumerate} 
+
+    ltheorem : *.tex
+    \newtheorem{theorem}{Theorem}
+    \newtheorem{defintion}{Definition}
+    \newtheorem{collorary}{Collorary}
+    \newtheorem{example}{Example}
+    \newtheorem{remark}{Remark}
+    \newtheorem{note}{Note} 
+
 
     lthm_newtheorem : *.tex
     \newtheorem{theorem}{Theorem}
@@ -88,7 +417,6 @@
     import Text.Regex
     import System.Environment 
     import System.Console.GetOpt
-
 
     screeninfo  : *.java,*.tex,*.h,*.m
     -(void)checkDevice{
@@ -246,6 +574,15 @@
     printf("---------------------------------\n");
     printf("=================================\n");
 
+
+    jtime_Duration : *.java
+    // import java.time.LocalDateTime;
+    // import java.time.Duration;
+    LocalDateTime from = LocalDateTime.now();
+    LocalDateTime to = LocalDateTime.now();
+    Duration duration = Duration.between(from, to);
+    Print.pbl(duration.toString());
+
     jtime_LocalDateTime : *.java
     //import java.time.LocalDateTime;
     LocalDateTime time = LocalDateTime.parse("2007-12-03T10:15:30", DateTimeFormatter.ISO_LOCAL_DATE_TIME);
@@ -312,19 +649,62 @@
     int width = arr.length;
 
 
-    jarr_int: *.java
+    jarr_int_1d: *.java
     int[] arr = {1, 2, 3, 4};
     int width = arr.length;
 
-    jarr_arr2d_4x4_1_to_n : *.java
+    jarr_arr2d_4x4_0_or_1 : *.java
     int[][] arr2d = {
-                   { 1,   2,   3,  4},
-                   { 5,   6,   7,  8},
-                   { 9,   10,  11, 12},
-                   { 13,  14,  15, 16},
-                  };
+        { 0,   0,   0,  1},
+        { 1,   1,   0,  1},
+        { 0,   1,   0,  1},
+        { 0,   1,   1,  0},
+    };
+    Aron.printArray2D(arr2d);
+    int height = arr2d.length;
+    int width = arr2d[0].length; 
+    int h = 0, w = 0;
+
+    jarr_arr2d_4x4_1_to_n : *.java
+    int[][] arr2d = { 
+        { 1,   2,   3,  4},
+        { 5,   6,   7,  8},
+        { 9,   10,  11, 12},
+        { 13,  14,  15, 16},
+    };
+    Aron.printArray2D(arr2d);
     int height = arr2d.length;
     int width = arr2d[0].length;
+
+    jarr_arr2d_4x3_1_to_n : *.java
+    int[][] arr2d = {
+        { 1,   2,   3},
+        { 4,   5,   6},
+        { 7,   8,  9},
+        { 10,  11,  12},
+    };
+    Aron.printArray2D(arr2d);
+    int height = arr2d.length;
+    int width = arr2d[0].length; 
+
+    jarr_arr2d_1x3_1_to_n : *.java
+    int[][] arr2d = {
+        { 1,   2,   3},
+    };
+    Aron.printArray2D(arr2d);
+    int height = arr2d.length;
+    int width = arr2d[0].length; 
+
+    jarr_arr2d_4x1_1_to_n : *.java
+    int[][] arr2d = {
+        { 1},
+        { 2},
+        { 3},
+        { 4},
+    };
+    Aron.printArray2D(arr2d);
+    int height = arr2d.length;
+    int width = arr2d[0].length; 
 
     jarr_array2d : *.java
     int[][] arr = {
@@ -333,6 +713,7 @@
                    {1, 2, 3, 4},
                    {1, 2, 3, 4},
                   };
+    Aron.printArray2D(arr2d);
     int height = arr2d.length;
     int width = arr2d[0].length;
 
@@ -344,6 +725,7 @@
                    {0, 0, 0, 0},
                    {0, 0, 0, 0},
                   };
+    Aron.printArray2D(arr2d);
     int height = arr2d.length;
     int width = arr2d[0].length;
 
@@ -355,6 +737,7 @@
                    {1, 1, 1, 1},
                    {1, 1, 1, 1},
                   };
+    Aron.printArray2D(arr2d);
     int height = arr2d.length;
     int width = arr2d[0].length;
 
@@ -369,6 +752,7 @@
                    {0, 0, 0, 0, 0, 0, 0, 0},
                    {0, 0, 0, 0, 0, 0, 0, 0},
                   };
+    Aron.printArray2D(arr2d);
     int height = arr2d.length;
     int width = arr2d[0].length;
 
@@ -383,6 +767,7 @@
                    {1, 1, 1, 1, 1, 1, 1, 1},
                    {1, 1, 1, 1, 1, 1, 1, 1},
                   };
+    Aron.printArray2D(arr2d);
     int height = arr2d.length;
     int width = arr2d[0].length;
 
@@ -426,15 +811,15 @@
 
     tess : *.cpp,*.c,*.h 
     void test0(){
-        begin(__PRETTY_FUNCTION__); 
+        begin(); 
         end();
     }
     void test1(){
-        begin(__PRETTY_FUNCTION__); 
+        begin(); 
         end();
     }
     void test2(){
-        begin(__PRETTY_FUNCTION__); 
+        begin(); 
         end();
     }
 
@@ -452,13 +837,23 @@
         Aron.end();
     }
 
+    jtry_try_catch : *.java
+    try{
+    }catch(IOException e){
+        e.printStackTrace();
+    }
+
     jbst_Binary_Tree : *.java
     BST b1 = new BST();
     b1.insert(10);
     b1.insert(5);
     b1.insert(15);
     b1.insert(1);
-    b1.insert(7);
+    b1.insert(7); 
+    int level = 0;
+    boolean isLeaf = true;
+    Aron.prettyPrint(b1.root, level, isLeaf);
+    Aron.binImage(b1.root);
 
     jclassfile_import_classfile: *.java 
     import classfile.*;
@@ -561,11 +956,17 @@
 
 
     jlist_Integer_init: *.java 
+    // immutable list
     List<Integer> list = Arrays.asList(1, 2, 3); 
+    // mutable list
+    List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));
 
 
     jlist_String_init: *.java 
+    // immutable list
     List<String> list = Arrays.asList("cat", "dog", "cow"); 
+    // mutable list
+    List<String> list = new ArrayList<>(Arrays.asList("cat", "dog", "cow"));
 
     jlist_Node: *.java 
     List<Node> list = new ArrayList<Node>();
@@ -602,9 +1003,9 @@
     class MyClass{
         public MyClass(){
         }
-        public print(){
+        public void print(){
         }
-    }
+    } 
 
     jvector_String : *.java 
     List<String> list = new Vector<String>();
