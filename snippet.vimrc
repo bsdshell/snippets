@@ -38,7 +38,33 @@ autocmd BufEnter *.tex iabbr <buffer> lfont_manysize
 \<CR>\huge
 \<CR>\Huge
 
-autocmd BufEnter *.tex iabbr <buffer> lbinary_tree_color_arrow_edge 
+autocmd BufEnter *.tex iabbr <buffer> ltry_file_cool 
+\<CR>this is a test file
+
+autocmd BufEnter *.tex iabbr <buffer> ltry_file_cool_1 
+\<CR>this is a test file
+
+autocmd BufEnter *.tex iabbr <buffer> ltree_qtree 
+\<CR>%\usepackage{tikz-qtree}
+\<CR>\tikzset{edge from parent/.style=
+\<CR>{draw, edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}}}
+\<CR>\begin{tikzpicture}[every leaf node/.style={draw,rectangle,minimum width={3em}},
+\<CR>every internal node/.style={draw,circle}]
+\<CR>\Tree
+\<CR>[.63
+\<CR>[.26 A:12
+\<CR>[.14 B:7
+\<CR>[.7 Z:2 X:5 ]
+\<CR>]
+\<CR>]
+\<CR>[.37 I:18
+\<CR>[.19 S:9 M:10  ]
+\<CR>]
+\<CR>[.99 kkk ]
+\<CR>]
+\<CR>\end{tikzpicture}
+
+autocmd BufEnter *.tex iabbr <buffer> ltree_tree_forest_tree_color_arrow_edge 
 \<CR>\begin{tikzpicture}[
 \<CR>edge from parent/.style={draw=red, ->, thick},
 \<CR>]
@@ -47,7 +73,7 @@ autocmd BufEnter *.tex iabbr <buffer> lbinary_tree_color_arrow_edge
 \<CR>child{node {c} };
 \<CR>\end{tikzpicture}
 
-autocmd BufEnter *.tex iabbr <buffer> lbinary_tree_forest 
+autocmd BufEnter *.tex iabbr <buffer> ltree_tree_forest 
 \<CR>\begin{forest}
 \<CR>for tree={circle,draw, l sep=20pt}
 \<CR>[3,red
@@ -65,7 +91,7 @@ autocmd BufEnter *.tex iabbr <buffer> lbinary_tree_forest
 \<CR>\end{forest}
 \<CR>% gf http://tex.stackexchange.com/questions/64148/tikz-label-on-tree-edge
 
-autocmd BufEnter *.tex iabbr <buffer> lbinary_tree_num_tizk 
+autocmd BufEnter *.tex iabbr <buffer> ltree_tree_num_tizk 
 \<CR>\begin{center}
 \<CR>\begin{tikzpicture}[level distance=0.8cm,
 \<CR>level 1/.style={sibling distance=1.7cm},
@@ -83,7 +109,7 @@ autocmd BufEnter *.tex iabbr <buffer> lbinary_tree_num_tizk
 \<CR>\end{tikzpicture}
 \<CR>\end{center}
 
-autocmd BufEnter *.tex iabbr <buffer> lbinary_tree_heap_tizk 
+autocmd BufEnter *.tex iabbr <buffer> ltree_tree_heap_tizk 
 \<CR>\begin{tikzpicture}[level distance=1.5cm,
 \<CR>level 1/.style={sibling distance=7cm},
 \<CR>level 2/.style={sibling distance=3.5cm}]
@@ -98,7 +124,7 @@ autocmd BufEnter *.tex iabbr <buffer> lbinary_tree_heap_tizk
 \<CR>};
 \<CR>\end{tikzpicture}
 
-autocmd BufEnter *.tex iabbr <buffer> lbinary_tree_simple_tizk 
+autocmd BufEnter *.tex iabbr <buffer> ltree_tree_simple_tizk 
 \<CR>\begin{tikzpicture}[level distance=1.5cm,
 \<CR>level 1/.style={sibling distance=3cm},
 \<CR>level 2/.style={sibling distance=1.5cm}]
@@ -240,6 +266,11 @@ autocmd BufEnter *.tex,*.html iabbr <buffer> mat_2x2_rotate
 \<CR>\cos(\beta) & -\sin(\beta)\\
 \<CR>\sin(\beta) & \cos(\beta)
 \<CR>\end{bmatrix}
+
+autocmd BufEnter *.tex,*.html iabbr <buffer> limg__grid_tikzpicture 
+\<CR>\begin{tikzpicture}
+\<CR>\draw[step=1cm,gray,very thin] (-2,-2) grid (6,6);
+\<CR>\end{tikzpicture}
 
 autocmd BufEnter *.tex,*.html iabbr <buffer> limg_latex_no_float 
 \<CR>\begin{minipage}{\linewidth}% to keep image and caption on one page
@@ -637,9 +668,21 @@ autocmd BufEnter *.java iabbr <buffer> jarr_Integer
 \<CR>Integer[] arr = {1, 2, 3, 4};
 \<CR>int width = arr.length;
 
-autocmd BufEnter *.java iabbr <buffer> jarr_int 
+autocmd BufEnter *.java iabbr <buffer> jarr_int_1d 
 \<CR>int[] arr = {1, 2, 3, 4};
 \<CR>int width = arr.length;
+
+autocmd BufEnter *.java iabbr <buffer> jarr_arr2d_4x4_0_or_1 
+\<CR>int[][] arr2d = {
+\<CR>{ 0,   0,   0,  1},
+\<CR>{ 1,   1,   0,  1},
+\<CR>{ 0,   1,   0,  1},
+\<CR>{ 0,   1,   1,  0},
+\<CR>};
+\<CR>Aron.printArray2D(arr2d);
+\<CR>int height = arr2d.length;
+\<CR>int width = arr2d[0].length;
+\<CR>int h = 0, w = 0;
 
 autocmd BufEnter *.java iabbr <buffer> jarr_arr2d_4x4_1_to_n 
 \<CR>int[][] arr2d = {
@@ -931,10 +974,16 @@ autocmd BufEnter *.java iabbr <buffer> jlist_to_iterator_String
 \<CR>}
 
 autocmd BufEnter *.java iabbr <buffer> jlist_Integer_init 
+\<CR>// immutable list
 \<CR>List<Integer> list = Arrays.asList(1, 2, 3);
+\<CR>// mutable list
+\<CR>List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));
 
 autocmd BufEnter *.java iabbr <buffer> jlist_String_init 
+\<CR>// immutable list
 \<CR>List<String> list = Arrays.asList("cat", "dog", "cow");
+\<CR>// mutable list
+\<CR>List<String> list = new ArrayList<>(Arrays.asList("cat", "dog", "cow"));
 
 autocmd BufEnter *.java iabbr <buffer> jlist_Node 
 \<CR>List<Node> list = new ArrayList<Node>();

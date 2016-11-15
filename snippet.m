@@ -38,7 +38,27 @@
     \huge
     \Huge
 
-    lbinary_tree_color_arrow_edge : *.tex 
+    ltree_qtree : *.tex
+    %\usepackage{tikz-qtree}
+     \tikzset{edge from parent/.style=
+         {draw, edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}}}
+    \begin{tikzpicture}[every leaf node/.style={draw,rectangle,minimum width={3em}},
+                        every internal node/.style={draw,circle}]
+    \Tree
+     [.63 
+        [.26 A:12 
+            [.14 B:7 
+                [.7 Z:2 X:5 ]
+            ]
+        ] 
+        [.37 I:18 
+            [.19 S:9 M:10  ]
+        ]
+        [.99 kkk ]
+    ]
+    \end{tikzpicture}
+
+    ltree_tree_forest_tree_color_arrow_edge : *.tex 
     \begin{tikzpicture}[
         edge from parent/.style={draw=red, ->, thick},
       ]
@@ -47,7 +67,7 @@
         child{node {c} };
     \end{tikzpicture}
 
-    lbinary_tree_forest : *.tex 
+    ltree_tree_forest : *.tex 
     \begin{forest}
     for tree={circle,draw, l sep=20pt}
     [3,red 
@@ -65,7 +85,7 @@
     \end{forest}
     % gf http://tex.stackexchange.com/questions/64148/tikz-label-on-tree-edge 
 
-    lbinary_tree_num_tizk : *.tex 
+    ltree_tree_num_tizk : *.tex 
     \begin{center}
     \begin{tikzpicture}[level distance=0.8cm,
     level 1/.style={sibling distance=1.7cm},
@@ -83,7 +103,7 @@
     \end{tikzpicture} 
     \end{center}
 
-    lbinary_tree_heap_tizk : *.tex 
+    ltree_tree_heap_tizk : *.tex 
     \begin{tikzpicture}[level distance=1.5cm,
       level 1/.style={sibling distance=7cm},
       level 2/.style={sibling distance=3.5cm}]
@@ -98,7 +118,7 @@
         };
     \end{tikzpicture}
     
-    lbinary_tree_simple_tizk : *.tex 
+    ltree_tree_simple_tizk : *.tex 
     \begin{tikzpicture}[level distance=1.5cm,
       level 1/.style={sibling distance=3cm},
       level 2/.style={sibling distance=1.5cm}]
@@ -112,6 +132,36 @@
           child {node {rright}}
         };
     \end{tikzpicture}
+
+    ltree_graph_simple_6nodes : *.tex
+    %\usepackage{tikz}
+    %\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+    \tikzset{main node/.style={circle,fill=red!20,draw,minimum size=1cm,inner sep=0pt},} 
+    \begin{center}
+    \begin{tikzpicture}
+    \begin{scope}[xshift=4cm]
+    \node[main node] (0) {$0$};
+    \node[main node] (1) [right = 2cm  of 0] {$1$};
+    \node[main node] (2) [below = 2cm  of 0] {$2$};
+    \node[main node] (3) [right = 2cm  of 2] {$3$};
+    \node[main node] (4) [right = 2cm  of 1] {$4$};
+    \node[main node] (5) [below = 2cm  of 4] {$5$};
+    \path[draw,thick]
+    (0) edge[->] node {} (1)
+    (1) edge[->] node {} (4)
+    (4) edge[->] node {} (5)
+    (1) edge[->] node {} (5)
+    (0) edge[->] node {} (3)
+    (3) edge[->] node {} (4)
+    (0) edge[->] node {} (2)
+    (2) edge[->] node {} (3)
+    (3) edge[->] node {} (5)
+    (1) edge[->] node {} (2);
+    \end{scope}
+    \end{tikzpicture}
+
+
+
 
     eqb : *.tex,*.html  
     \begin{equation}
@@ -243,6 +293,12 @@
     \cos(\beta) & -\sin(\beta)\\
     \sin(\beta) & \cos(\beta)
     \end{bmatrix}
+
+    
+   limg__grid_tikzpicture : *.tex,*.html 
+   \begin{tikzpicture}
+   \draw[step=1cm,gray,very thin] (-2,-2) grid (6,6);
+   \end{tikzpicture} 
 
 
     limg_latex_no_float : *.tex,*.html 
@@ -664,6 +720,20 @@
     int height = arr2d.length;
     int width = arr2d[0].length; 
     int h = 0, w = 0;
+
+    jarr_arr2d_6x6_0_1_adjacent_matrix : *.java
+    int[][] arr2d = {
+        {0, 1, 1, 1, 0, 0},
+        {0, 0, 1, 0, 0, 1},
+        {0, 0, 0, 1, 0, 0},
+        {0, 0, 0, 0, 1, 1},
+        {0, 0, 0, 0, 0, 1},
+        {0, 0, 0, 0, 0, 0},
+    };
+    Aron.printArray2D(arr2d);
+    int height = arr2d.length;
+    int width = arr2d[0].length; 
+
 
     jarr_arr2d_4x4_1_to_n : *.java
     int[][] arr2d = { 
