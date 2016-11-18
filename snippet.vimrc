@@ -38,12 +38,6 @@ autocmd BufEnter *.tex iabbr <buffer> lfont_manysize
 \<CR>\huge
 \<CR>\Huge
 
-autocmd BufEnter *.tex iabbr <buffer> ltry_file_cool 
-\<CR>this is a test file
-
-autocmd BufEnter *.tex iabbr <buffer> ltry_file_cool_1 
-\<CR>this is a test file
-
 autocmd BufEnter *.tex iabbr <buffer> ltree_qtree 
 \<CR>%\usepackage{tikz-qtree}
 \<CR>\tikzset{edge from parent/.style=
@@ -139,6 +133,33 @@ autocmd BufEnter *.tex iabbr <buffer> ltree_tree_simple_tizk
 \<CR>};
 \<CR>\end{tikzpicture}
 
+autocmd BufEnter *.tex iabbr <buffer> ltree_graph_simple_6nodes 
+\<CR>%\usepackage{tikz}
+\<CR>%\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+\<CR>\tikzset{main node/.style={circle,fill=red!20,draw,minimum size=1cm,inner sep=0pt},}
+\<CR>\begin{center}
+\<CR>\begin{tikzpicture}
+\<CR>\begin{scope}[xshift=4cm]
+\<CR>\node[main node] (0) {$0$};
+\<CR>\node[main node] (1) [right = 2cm  of 0] {$1$};
+\<CR>\node[main node] (2) [below = 2cm  of 0] {$2$};
+\<CR>\node[main node] (3) [right = 2cm  of 2] {$3$};
+\<CR>\node[main node] (4) [right = 2cm  of 1] {$4$};
+\<CR>\node[main node] (5) [below = 2cm  of 4] {$5$};
+\<CR>\path[draw,thick]
+\<CR>(0) edge[->] node {} (1)
+\<CR>(1) edge[->] node {} (4)
+\<CR>(4) edge[->] node {} (5)
+\<CR>(1) edge[->] node {} (5)
+\<CR>(0) edge[->] node {} (3)
+\<CR>(3) edge[->] node {} (4)
+\<CR>(0) edge[->] node {} (2)
+\<CR>(2) edge[->] node {} (3)
+\<CR>(3) edge[->] node {} (5)
+\<CR>(1) edge[->] node {} (2);
+\<CR>\end{scope}
+\<CR>\end{tikzpicture}
+
 autocmd BufEnter *.tex,*.html iabbr <buffer> eqb 
 \<CR>\begin{equation}
 \<CR>\begin{aligned}
@@ -222,7 +243,14 @@ autocmd BufEnter *.tex,*.html iabbr <buffer> matb_3x3
 \<CR>1 & 2  & 3 \\
 \<CR>4 & 5  & 6 \\
 \<CR>7 & 8  & 9 \\
-\<CR>end{bmatrix}
+\<CR>\end{bmatrix}
+
+autocmd BufEnter *.tex,*.html iabbr <buffer> matb_3x3_[ 
+\<CR>\[ \begin{bmatrix}
+\<CR>1 & 2  & 3 \\
+\<CR>4 & 5  & 6 \\
+\<CR>7 & 8  & 9 \\
+\<CR>\end{bmatrix} \]
 
 autocmd BufEnter *.tex,*.html iabbr <buffer> mat( 
 \<CR>\[
@@ -233,6 +261,12 @@ autocmd BufEnter *.tex,*.html iabbr <buffer> mat(
 \<CR>\]
 
 autocmd BufEnter *.tex,*.html iabbr <buffer> matv_3x3 
+\<CR>\left\| \begin{array}{ccc}
+\<CR>a & b & c \\
+\<CR>d & e & f \\
+\<CR>g & h & i \end{array} \right\|
+
+autocmd BufEnter *.tex,*.html iabbr <buffer> matv_3x3_[ 
 \<CR>\[
 \<CR>\left\| \begin{array}{ccc}
 \<CR>a & b & c \\
@@ -249,13 +283,19 @@ autocmd BufEnter *.tex,*.html iabbr <buffer> mat_4x4_m_n_subscript
 \<CR>a_{m,1} & a_{m,2} & \cdots & a_{m,n}
 \<CR>\end{pmatrix}
 
-autocmd BufEnter *.tex,*.html iabbr <buffer> mati_2x2_identity 
-\<CR>A= \begin{bmatrix}
+autocmd BufEnter *.tex,*.html iabbr <buffer> mati_2x2_identity_[ 
+\<CR>\[ A= \begin{bmatrix}
 \<CR>1 & 0\\
 \<CR>0 & 1
-\<CR>\end{bmatrix}
+\<CR>\end{bmatrix} \]
 
-autocmd BufEnter *.tex,*.html iabbr <buffer> matn_1_to_n 
+autocmd BufEnter *.tex,*.html iabbr <buffer> matn_2x2_1_to_n_[ 
+\<CR>\[ A= \begin{bmatrix}
+\<CR>1 & 2\\
+\<CR>3 & 4
+\<CR>\end{bmatrix} \]
+
+autocmd BufEnter *.tex,*.html iabbr <buffer> matn_2x2_1_to_n 
 \<CR>A= \begin{bmatrix}
 \<CR>1 & 2\\
 \<CR>3 & 4
@@ -684,6 +724,19 @@ autocmd BufEnter *.java iabbr <buffer> jarr_arr2d_4x4_0_or_1
 \<CR>int width = arr2d[0].length;
 \<CR>int h = 0, w = 0;
 
+autocmd BufEnter *.java iabbr <buffer> jarr_arr2d_6x6_0_1_adjacent_matrix 
+\<CR>int[][] arr2d = {
+\<CR>{0, 1, 1, 1, 0, 0},
+\<CR>{0, 0, 1, 0, 0, 1},
+\<CR>{0, 0, 0, 1, 0, 0},
+\<CR>{0, 0, 0, 0, 1, 1},
+\<CR>{0, 0, 0, 0, 0, 1},
+\<CR>{0, 0, 0, 0, 0, 0},
+\<CR>};
+\<CR>Aron.printArray2D(arr2d);
+\<CR>int height = arr2d.length;
+\<CR>int width = arr2d[0].length;
+
 autocmd BufEnter *.java iabbr <buffer> jarr_arr2d_4x4_1_to_n 
 \<CR>int[][] arr2d = {
 \<CR>{ 1,   2,   3,  4},
@@ -958,6 +1011,11 @@ autocmd BufEnter *.java iabbr <buffer> jset_String
 
 autocmd BufEnter jthrow_throw_new_IllegalArgumentException iabbr <buffer> jthrow_throw_new_IllegalArgumentException 
 \<CR>throw new IllegalArgumentException("str must be not null.");
+
+autocmd BufEnter *.java iabbr <buffer> jlist_copy_list_with_lambda 
+\<CR>List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));
+\<CR>List<Integer> ll = list.stream().collect(Collectors.toList());
+\<CR>Aron.printList(ll);
 
 autocmd BufEnter *.java iabbr <buffer> jlist_to_iterator_Integer 
 \<CR>List<Integer> list = Arrays.asList(1, 2, 3);

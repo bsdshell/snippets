@@ -2,6 +2,11 @@
     echo '1[' . &completefunc .']' . '2[' . &completefunc .']'
     3sleep
     
+    proof_template : *.tex,*.html
+    \begin{proof} this is statement that you need to prove
+    \intertext{Let \lambda \in \mathbb{R}^n}
+    \end{proof}
+
     matha_mathbf_A  : *.tex,*.html 
     \mathbf{A} 
 
@@ -133,6 +138,25 @@
         };
     \end{tikzpicture}
 
+    ltree_graph_4_nodes : *.tex
+    %\usetikzlibrary{positioning}  % add to header
+    %\tikzset{main node/.style={circle,fill=blue!20,draw,minimum size=1cm,inner sep=0pt},}
+    \begin{tikzpicture}
+    \begin{scope}[xshift=4cm]
+    \node[main node] (1) {$1$};
+    \node[main node] (2) [right = 2cm  of 1] {$2$};
+    \node[main node] (3) [below = 2cm  of 1] {$3$};
+    \node[main node] (4) [right = 2cm  of 3] {$4$};
+    \path[draw,thick]
+    (1) edge[->] node {} (2)
+    (2) edge[->] node {} (4)
+    (4) edge[->] node {} (3)
+    (3) edge[->] node {} (1)
+    (4) edge[->] node {} (1);
+    \end{scope}
+    \end{tikzpicture}
+
+
     ltree_graph_simple_6nodes : *.tex
     %\usepackage{tikz}
     %\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
@@ -229,6 +253,67 @@
      28 & 38 & 48  \\ \hline
     \end{tabular}
 
+    span_2_vector_$
+    %\usepackage{amsmath,amsfonts}  amsfonts are needed 
+    %\DeclareMathOperator{\SPAN}{span} span is defined macro
+    $\SPAN \left\{
+        \left[ \begin{array}{c}   
+        1 \\
+        0 
+        \end{array} \right] \,,
+        \left[ \begin{array}{c}   
+        0 \\
+        1 
+        \end{array} \right]
+    \right\}$
+
+    span_2_vector_[
+    %\usepackage{amsmath,amsfonts}  amsfonts are needed 
+    %\DeclareMathOperator{\SPAN}{span} span is defined macro
+    \[ \SPAN \left\{
+        \left[ \begin{array}{c}   
+        1 \\
+        0 
+        \end{array} \right] \,,
+        \left[ \begin{array}{c}   
+        0 \\
+        1 
+        \end{array} \right]
+    \right\} \]
+
+    span_matrix_$
+    %\usepackage{amsmath,amsfonts}  amsfonts are needed 
+    %\DeclareMathOperator{\SPAN}{span} span is defined macro
+    $\SPAN \left\{
+    \begin{bmatrix}
+    \cos(\beta) & -\sin(\beta)\\
+    \sin(\beta) & \cos(\beta)
+    \end{bmatrix} 
+    \right\}$
+
+    span_matrix_[
+    %\usepackage{amsmath,amsfonts}  amsfonts are needed 
+    %\DeclareMathOperator{\SPAN}{span} span is defined macro
+    \[ \SPAN \left\{
+    \begin{bmatrix}
+    \cos(\beta) & -\sin(\beta)\\
+    \sin(\beta) & \cos(\beta)
+    \end{bmatrix} 
+    \right\} \]
+
+    mat_3_vector
+    \left[ \begin{array}{c}   
+    1 \\
+    0 \\
+    0 
+    \end{array} \right]
+
+    mat_2_vector
+    \left[ \begin{array}{c}   
+    1 \\
+    0 
+    \end{array} \right]
+
     matn_3x3_1_to_n : *.tex,*.html  
     A= \begin{bmatrix}
     1 & 2 & 3\\
@@ -248,7 +333,14 @@
         1 & 2  & 3 \\
         4 & 5  & 6 \\
         7 & 8  & 9 \\
-    end{bmatrix}
+    \end{bmatrix}
+
+    matb_3x3_[ : *.tex,*.html 
+    \[ \begin{bmatrix}
+        1 & 2  & 3 \\
+        4 & 5  & 6 \\
+        7 & 8  & 9 \\
+    \end{bmatrix} \]
 
     mat(  : *.tex,*.html 
     \[ 
@@ -259,6 +351,12 @@
     \]
 
     matv_3x3 : *.tex,*.html 
+    \left\| \begin{array}{ccc}
+    a & b & c \\
+    d & e & f \\
+    g & h & i \end{array} \right\| 
+
+    matv_3x3_[ : *.tex,*.html 
     \[ 
         \left\| \begin{array}{ccc}
         a & b & c \\
@@ -275,14 +373,19 @@
     a_{m,1} & a_{m,2} & \cdots & a_{m,n}
     \end{pmatrix}
 
-
-    mati_2x2_identity : *.tex,*.html 
-    A= \begin{bmatrix}
+    mati_2x2_identity_[ : *.tex,*.html 
+    \[ A= \begin{bmatrix}
     1 & 0\\
     0 & 1
-    \end{bmatrix}
+    \end{bmatrix} \]
 
-    matn_1_to_n : *.tex,*.html 
+    matn_2x2_1_to_n_[ : *.tex,*.html 
+    \[ A= \begin{bmatrix}
+    1 & 2\\
+    3 & 4
+    \end{bmatrix} \]
+
+    matn_2x2_1_to_n : *.tex,*.html 
     A= \begin{bmatrix}
     1 & 2\\
     3 & 4
@@ -316,7 +419,19 @@
     \end{figure}
     % gf http://tex.stackexchange.com/questions/8625/force-figure-placement-in-text
 
-    detp : *.tex,*.html 
+    det_characteristic_polynomial: *.tex,*.html 
+    \[
+        \det\left(\begin{bmatrix}
+        1 & 2\\
+        3 & 4
+        \end{bmatrix} - \lambda 
+        \begin{bmatrix}
+        1 & 0\\
+        0 & 1
+        \end{bmatrix} \right)  = 0
+    \]
+
+    det_3x3_lambda_array : *.tex,*.html 
     \[ 
         \chi(\lambda) = \left\| \begin{array}{ccc}
         \lambda - a & -b & -c \\
@@ -324,11 +439,19 @@
         -g & -h & \lambda - i \end{array} \right\| 
     \]
 
-    det_2x2 : *.tex,*.html 
+    det_2x2_array : *.tex,*.html 
     \[ 
         \left\| \begin{array}{cc}
         a & b \\
         c & d \end{array} \right\| 
+    \]
+
+    det_2x2_vmatrix : *.tex,*.html 
+    \[ 
+        \begin{vmatrix}
+        1 & 2\\
+        3 & 4
+        \end{vmatrix}
     \]
 
     vet_vdot_column : *.tex,*.html
@@ -1009,6 +1132,11 @@
 
     jthrow_throw_new_IllegalArgumentException
     throw new IllegalArgumentException("str must be not null.");
+
+    jlist_copy_list_with_lambda : *.java
+    List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3)); 
+    List<Integer> ll = list.stream().collect(Collectors.toList()); 
+    Aron.printList(ll);
 
     jlist_to_iterator_Integer: *.java 
     List<Integer> list = Arrays.asList(1, 2, 3); 
