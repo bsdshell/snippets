@@ -2,6 +2,11 @@ autocmd BufEnter *.vimrc iabbr <buffer> vdb
 \<CR>echo '1[' . &completefunc .']' . '2[' . &completefunc .']'
 \<CR>3sleep
 
+autocmd BufEnter *.tex,*.html iabbr <buffer> proof_template 
+\<CR>\begin{proof} this is statement that you need to prove
+\<CR>\intertext{Let \lambda \in \mathbb{R}^n}
+\<CR>\end{proof}
+
 autocmd BufEnter *.tex,*.html iabbr <buffer> matha_mathbf_A 
 \<CR>\mathbf{A}
 
@@ -133,6 +138,47 @@ autocmd BufEnter *.tex iabbr <buffer> ltree_tree_simple_tizk
 \<CR>};
 \<CR>\end{tikzpicture}
 
+autocmd BufEnter *.tex iabbr <buffer> lgraph_state_machine 
+\<CR>% gx /Users/cat/myfile/github/math/StateMachine2.png
+\<CR>\documentclass[border=4pt,convert={density=800,size=500x300,outext=.png}]{standalone}
+\<CR>\usepackage{tikz}
+\<CR>\usetikzlibrary{automata,positioning}
+\<CR>\begin{document}
+\<CR>\begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\<CR>\node[state,initial] (q_0)   {$q_0$};
+\<CR>\node[state] (q_1) [above right=of q_0] {$q_1$};
+\<CR>\node[state] (q_2) [below right=of q_1] {$q_2$};
+\<CR>\node[state, accepting] (q_3) [below right=of q_0] {$q_3$};
+\<CR>\path[->]
+\<CR>(q_0) edge  node {[} (q_1)
+\<CR>(q_1) edge [bend right] node [below] {0-9} (q_2)
+\<CR>edge [loop above] node {[} ()
+\<CR>(q_2) edge  node {]} (q_3)
+\<CR>edge [loop below] node {0-9} ()
+\<CR>(q_2) edge [bend right] node [above] {[} (q_1)
+\<CR>(q_1) edge [bend right] node {]} (q_3)
+\<CR>(q_3) edge [loop below] node {]} ();
+\<CR>\end{tikzpicture}
+\<CR>\end{document}
+
+autocmd BufEnter *.tex iabbr <buffer> ltree_graph_4_nodes 
+\<CR>%\usetikzlibrary{positioning}  % add to header
+\<CR>%\tikzset{main node/.style={circle,fill=blue!20,draw,minimum size=1cm,inner sep=0pt},}
+\<CR>\begin{tikzpicture}
+\<CR>\begin{scope}[xshift=4cm]
+\<CR>\node[main node] (1) {$1$};
+\<CR>\node[main node] (2) [right = 2cm  of 1] {$2$};
+\<CR>\node[main node] (3) [below = 2cm  of 1] {$3$};
+\<CR>\node[main node] (4) [right = 2cm  of 3] {$4$};
+\<CR>\path[draw,thick]
+\<CR>(1) edge[->] node {} (2)
+\<CR>(2) edge[->] node {} (4)
+\<CR>(4) edge[->] node {} (3)
+\<CR>(3) edge[->] node {} (1)
+\<CR>(4) edge[->] node {} (1);
+\<CR>\end{scope}
+\<CR>\end{tikzpicture}
+
 autocmd BufEnter *.tex iabbr <buffer> ltree_graph_simple_6nodes 
 \<CR>%\usepackage{tikz}
 \<CR>%\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
@@ -176,7 +222,7 @@ autocmd BufEnter *.tex,*.html iabbr <buffer> eqq
 \<CR>end{aligned}
 \<CR>end{equation}
 
-autocmd BufEnter *.tex,*.html iabbr <buffer> gr_greek_latter 
+autocmd BufEnter *.tex,*.html iabbr <buffer> gr_greek_letter 
 \<CR>\[
 \<CR>alpha     \theta     \tau      \beta
 \<CR>vartheta  \pi        \upsilon  \gamma
@@ -223,6 +269,67 @@ autocmd BufEnter *.tex,*.html iabbr <buffer> tab33_tabular
 \<CR>22 & 28 & 38  \\ \hline
 \<CR>28 & 38 & 48  \\ \hline
 \<CR>\end{tabular}
+
+autocmd BufEnter span_2_vector_$ iabbr <buffer> span_2_vector_$ 
+\<CR>%\usepackage{amsmath,amsfonts}  amsfonts are needed
+\<CR>%\DeclareMathOperator{\SPAN}{span} span is defined macro
+\<CR>$\SPAN \left\{
+\<CR>\left[ \begin{array}{c}
+\<CR>1 \\
+\<CR>0
+\<CR>\end{array} \right] \,,
+\<CR>\left[ \begin{array}{c}
+\<CR>0 \\
+\<CR>1
+\<CR>\end{array} \right]
+\<CR>\right\}$
+
+autocmd BufEnter span_2_vector_[ iabbr <buffer> span_2_vector_[ 
+\<CR>%\usepackage{amsmath,amsfonts}  amsfonts are needed
+\<CR>%\DeclareMathOperator{\SPAN}{span} span is defined macro
+\<CR>\[ \SPAN \left\{
+\<CR>\left[ \begin{array}{c}
+\<CR>1 \\
+\<CR>0
+\<CR>\end{array} \right] \,,
+\<CR>\left[ \begin{array}{c}
+\<CR>0 \\
+\<CR>1
+\<CR>\end{array} \right]
+\<CR>\right\} \]
+
+autocmd BufEnter span_matrix_$ iabbr <buffer> span_matrix_$ 
+\<CR>%\usepackage{amsmath,amsfonts}  amsfonts are needed
+\<CR>%\DeclareMathOperator{\SPAN}{span} span is defined macro
+\<CR>$\SPAN \left\{
+\<CR>\begin{bmatrix}
+\<CR>\cos(\beta) & -\sin(\beta)\\
+\<CR>\sin(\beta) & \cos(\beta)
+\<CR>\end{bmatrix}
+\<CR>\right\}$
+
+autocmd BufEnter span_matrix_[ iabbr <buffer> span_matrix_[ 
+\<CR>%\usepackage{amsmath,amsfonts}  amsfonts are needed
+\<CR>%\DeclareMathOperator{\SPAN}{span} span is defined macro
+\<CR>\[ \SPAN \left\{
+\<CR>\begin{bmatrix}
+\<CR>\cos(\beta) & -\sin(\beta)\\
+\<CR>\sin(\beta) & \cos(\beta)
+\<CR>\end{bmatrix}
+\<CR>\right\} \]
+
+autocmd BufEnter mat_3_vector iabbr <buffer> mat_3_vector 
+\<CR>\left[ \begin{array}{c}
+\<CR>1 \\
+\<CR>0 \\
+\<CR>0
+\<CR>\end{array} \right]
+
+autocmd BufEnter mat_2_vector iabbr <buffer> mat_2_vector 
+\<CR>\left[ \begin{array}{c}
+\<CR>1 \\
+\<CR>0
+\<CR>\end{array} \right]
 
 autocmd BufEnter *.tex,*.html iabbr <buffer> matn_3x3_1_to_n 
 \<CR>A= \begin{bmatrix}
@@ -327,7 +434,19 @@ autocmd BufEnter *.tex,*.html iabbr <buffer> limg_latex_float_figure
 \<CR>\end{figure}
 \<CR>% gf http://tex.stackexchange.com/questions/8625/force-figure-placement-in-text
 
-autocmd BufEnter *.tex,*.html iabbr <buffer> detp 
+autocmd BufEnter *.tex,*.html iabbr <buffer> det_characteristic_polynomial 
+\<CR>\[
+\<CR>\det\left(\begin{bmatrix}
+\<CR>1 & 2\\
+\<CR>3 & 4
+\<CR>\end{bmatrix} - \lambda
+\<CR>\begin{bmatrix}
+\<CR>1 & 0\\
+\<CR>0 & 1
+\<CR>\end{bmatrix} \right)  = 0
+\<CR>\]
+
+autocmd BufEnter *.tex,*.html iabbr <buffer> det_3x3_lambda_array 
 \<CR>\[
 \<CR>\chi(\lambda) = \left\| \begin{array}{ccc}
 \<CR>\lambda - a & -b & -c \\
@@ -335,11 +454,19 @@ autocmd BufEnter *.tex,*.html iabbr <buffer> detp
 \<CR>-g & -h & \lambda - i \end{array} \right\|
 \<CR>\]
 
-autocmd BufEnter *.tex,*.html iabbr <buffer> det_2x2 
+autocmd BufEnter *.tex,*.html iabbr <buffer> det_2x2_array 
 \<CR>\[
 \<CR>\left\| \begin{array}{cc}
 \<CR>a & b \\
 \<CR>c & d \end{array} \right\|
+\<CR>\]
+
+autocmd BufEnter *.tex,*.html iabbr <buffer> det_2x2_vmatrix 
+\<CR>\[
+\<CR>\begin{vmatrix}
+\<CR>1 & 2\\
+\<CR>3 & 4
+\<CR>\end{vmatrix}
 \<CR>\]
 
 autocmd BufEnter *.tex,*.html iabbr <buffer> vet_vdot_column 
@@ -1000,6 +1127,11 @@ autocmd BufEnter *.java iabbr <buffer> jite_Iterator
 \<CR>List<String> list = ArrayList<String>();
 \<CR>Iterator<String> ite = list.iterator();
 
+autocmd BufEnter Iterator ite = list.iterator(); iabbr <buffer> Iterator ite = list.iterator(); 
+\<CR>while(ite.hasNext()){
+\<CR>Print.p(ite.next());
+\<CR>}
+
 autocmd BufEnter *.java iabbr <buffer> jpriority_PriorityQueue 
 \<CR>Queue<String> queue = new PriorityQueue<String>();
 
@@ -1011,6 +1143,20 @@ autocmd BufEnter *.java iabbr <buffer> jset_String
 
 autocmd BufEnter jthrow_throw_new_IllegalArgumentException iabbr <buffer> jthrow_throw_new_IllegalArgumentException 
 \<CR>throw new IllegalArgumentException("str must be not null.");
+
+autocmd BufEnter *.java iabbr <buffer> jtime_stop_watch 
+\<CR>long ti, tf;
+\<CR>ti = System.currentTimeMillis();
+\<CR>tf = System.currentTimeMillis();
+\<CR>Print.pbl("Finish. Total time:" + (tf - ti));
+
+autocmd BufEnter *.java iabbr <buffer> jarray_array_list 
+\<CR>String[] array = str.split("\\s+");
+\<CR>List<String> list = Arrays.asList(array);
+
+autocmd BufEnter *.java iabbr <buffer> jlist_array_list 
+\<CR>String[] array = str.split("\\s+");
+\<CR>List<String> list = Arrays.asList(array);
 
 autocmd BufEnter *.java iabbr <buffer> jlist_copy_list_with_lambda 
 \<CR>List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));

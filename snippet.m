@@ -138,6 +138,29 @@
         };
     \end{tikzpicture}
 
+    lgraph_state_machine : *.tex
+    % gx /Users/cat/myfile/github/math/StateMachine2.png
+    \documentclass[border=4pt,convert={density=800,size=500x300,outext=.png}]{standalone}
+    \usepackage{tikz}
+    \usetikzlibrary{automata,positioning}
+    \begin{document}
+    \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
+       \node[state,initial] (q_0)   {$q_0$}; 
+       \node[state] (q_1) [above right=of q_0] {$q_1$}; 
+       \node[state] (q_2) [below right=of q_1] {$q_2$}; 
+       \node[state, accepting] (q_3) [below right=of q_0] {$q_3$}; 
+        \path[->] 
+        (q_0) edge  node {[} (q_1)
+        (q_1) edge [bend right] node [below] {0-9} (q_2)
+              edge [loop above] node {[} ()
+        (q_2) edge  node {]} (q_3)
+              edge [loop below] node {0-9} ()
+        (q_2) edge [bend right] node [above] {[} (q_1)
+        (q_1) edge [bend right] node {]} (q_3)
+        (q_3) edge [loop below] node {]} ();
+    \end{tikzpicture}
+    \end{document}  
+
     ltree_graph_4_nodes : *.tex
     %\usetikzlibrary{positioning}  % add to header
     %\tikzset{main node/.style={circle,fill=blue!20,draw,minimum size=1cm,inner sep=0pt},}
@@ -203,19 +226,19 @@
        end{aligned}
     end{equation}
 
-    gr_greek_latter : *.tex,*.html  
-    \[
-         alpha     \theta     \tau      \beta
-         vartheta  \pi        \upsilon  \gamma
-         gamma     \varpi     \phi      \delta
-         kappa     \rho       \varphi   \epsilon
-         lambda    \varrho    \chi      \varepsilon
-         mu        \sigma     \psi      \zeta
-         nu        \varsigma  \omega    \eta
-         xi        \Gamma     \Lambda   \Sigma
-         Psi       \Delta     \Upsilon  \Omega
-         Theta     \Pi        \Phi
-    \]
+    gr_greek_letter : *.tex,*.html  
+    \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+    alpha    & $\alpha$    & theta   & $\theta$   & tau        & $\tau$        & beta   & $\beta$   \\ \hline
+    vartheta & $\vartheta$ & pi      & $\pi$      & upsilon    & $\upsilon$    & gamma  & $\gamma$  \\ \hline
+    varpi    & $\varpi$    & phi     & $\phi$     & delta      & $\delta$      & kappa  & $\kappa$  \\ \hline
+    rho      & $\rho$      & varphi  & $\varphi$  & epsilon    & $\epsilon$    & lambda & $\lambda$ \\ \hline
+    varrho   & $\varrho$   & chi     & $\chi$     & varepsilon & $\varepsilon$ & mu     & $\mu$     \\ \hline
+    sigma    & $\sigma$    & psi     & $\psi$     & zeta       & $\zeta$       & nu     & $\nu$     \\ \hline
+    varsigma & $\varsigma$ & omega   & $\omega$   & eta        & $\eta$        & xi     & $\xi$     \\ \hline
+    Gamma    & $\Gamma$    & Lambda  & $\Lambda$  & Sigma      & $\Sigma$      & Psi    & $\Psi$    \\ \hline
+    Delta    & $\Delta$    & Upsilon & $\Upsilon$ & Omega      & $\Omega$      & Theta  & $\Theta$  \\ \hline
+    Pi       & $\Pi$       & Phi     & $\Phi$     & 0          & 0             & 1      & 1         \\ \hline
+    \end{tabular} 
 
 
      tab66_tabular : *.tex,*.html 
@@ -1121,6 +1144,11 @@
     List<String> list = ArrayList<String>(); 
     Iterator<String> ite = list.iterator();
 
+    Iterator ite = list.iterator();
+    while(ite.hasNext()){
+        Print.p(ite.next());
+    }
+
     jpriority_PriorityQueue: *.java 
     Queue<String> queue = new PriorityQueue<String>(); 
 
@@ -1132,6 +1160,20 @@
 
     jthrow_throw_new_IllegalArgumentException
     throw new IllegalArgumentException("str must be not null.");
+
+    jtime_stop_watch : *.java
+    long ti, tf;
+    ti = System.currentTimeMillis();
+    tf = System.currentTimeMillis();
+    Print.pbl("Finish. Total time:" + (tf - ti));
+
+    jarray_array_list : *.java
+    String[] array = str.split("\\s+");
+    List<String> list = Arrays.asList(array);
+
+    jlist_array_list : *.java
+    String[] array = str.split("\\s+");
+    List<String> list = Arrays.asList(array);
 
     jlist_copy_list_with_lambda : *.java
     List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3)); 
