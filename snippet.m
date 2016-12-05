@@ -227,7 +227,7 @@
     end{equation}
 
     gr_greek_letter : *.tex,*.html  
-    \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+    \begin{tabular}{\|c\|c\|c\|c\|c\|c\|c\|c\|} \hline
     alpha    & $\alpha$    & theta   & $\theta$   & tau        & $\tau$        & beta   & $\beta$   \\ \hline
     vartheta & $\vartheta$ & pi      & $\pi$      & upsilon    & $\upsilon$    & gamma  & $\gamma$  \\ \hline
     varpi    & $\varpi$    & phi     & $\phi$     & delta      & $\delta$      & kappa  & $\kappa$  \\ \hline
@@ -239,18 +239,6 @@
     Delta    & $\Delta$    & Upsilon & $\Upsilon$ & Omega      & $\Omega$      & Theta  & $\Theta$  \\ \hline
     Pi       & $\Pi$       & Phi     & $\Phi$     & 0          & 0             & 1      & 1         \\ \hline
     \end{tabular} 
-
-
-     tab66_tabular : *.tex,*.html 
-     \begin{tabular}{\|c\|c\|c\|c\|c\|c\|} \hline
-     10 & 20 & 30 & 40 & 50 & 50 \\ \hline
-     22 & 28 & 38 & 48 & 58 & 50 \\ \hline
-     28 & 38 & 48 & 58 & 68 & 50 \\ \hline
-     33 & 18 & 18 & 28 & 99 & 50 \\ \hline
-     98 & 18 & 18 & 28 & 88 & 50 \\ \hline
-     98 & 18 & 18 & 28 & 88 & 50 \\ \hline
-     \end{tabular}
-
 
      tab55_tabular : *.tex,*.html 
      \begin{tabular}{\|c\|c\|c\|c\|c\|} \hline
@@ -1052,6 +1040,9 @@
         Aron.beg();
         Aron.end();
     }
+    
+    
+
 
     jtry_try_catch : *.java
     try{
@@ -1167,7 +1158,7 @@
     tf = System.currentTimeMillis();
     Print.pbl("Finish. Total time:" + (tf - ti));
 
-    jarray_array_list : *.java
+    jarray_array_to_list : *.java
     String[] array = str.split("\\s+");
     List<String> list = Arrays.asList(array);
 

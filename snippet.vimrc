@@ -223,27 +223,17 @@ autocmd BufEnter *.tex,*.html iabbr <buffer> eqq
 \<CR>end{equation}
 
 autocmd BufEnter *.tex,*.html iabbr <buffer> gr_greek_letter 
-\<CR>\[
-\<CR>alpha     \theta     \tau      \beta
-\<CR>vartheta  \pi        \upsilon  \gamma
-\<CR>gamma     \varpi     \phi      \delta
-\<CR>kappa     \rho       \varphi   \epsilon
-\<CR>lambda    \varrho    \chi      \varepsilon
-\<CR>mu        \sigma     \psi      \zeta
-\<CR>nu        \varsigma  \omega    \eta
-\<CR>xi        \Gamma     \Lambda   \Sigma
-\<CR>Psi       \Delta     \Upsilon  \Omega
-\<CR>Theta     \Pi        \Phi
-\<CR>\]
-
-autocmd BufEnter *.tex,*.html iabbr <buffer> tab66_tabular 
-\<CR>\begin{tabular}{\|c\|c\|c\|c\|c\|c\|} \hline
-\<CR>10 & 20 & 30 & 40 & 50 & 50 \\ \hline
-\<CR>22 & 28 & 38 & 48 & 58 & 50 \\ \hline
-\<CR>28 & 38 & 48 & 58 & 68 & 50 \\ \hline
-\<CR>33 & 18 & 18 & 28 & 99 & 50 \\ \hline
-\<CR>98 & 18 & 18 & 28 & 88 & 50 \\ \hline
-\<CR>98 & 18 & 18 & 28 & 88 & 50 \\ \hline
+\<CR>\begin{tabular}{\|c\|c\|c\|c\|c\|c\|c\|c\|} \hline
+\<CR>alpha    & $\alpha$    & theta   & $\theta$   & tau        & $\tau$        & beta   & $\beta$   \\ \hline
+\<CR>vartheta & $\vartheta$ & pi      & $\pi$      & upsilon    & $\upsilon$    & gamma  & $\gamma$  \\ \hline
+\<CR>varpi    & $\varpi$    & phi     & $\phi$     & delta      & $\delta$      & kappa  & $\kappa$  \\ \hline
+\<CR>rho      & $\rho$      & varphi  & $\varphi$  & epsilon    & $\epsilon$    & lambda & $\lambda$ \\ \hline
+\<CR>varrho   & $\varrho$   & chi     & $\chi$     & varepsilon & $\varepsilon$ & mu     & $\mu$     \\ \hline
+\<CR>sigma    & $\sigma$    & psi     & $\psi$     & zeta       & $\zeta$       & nu     & $\nu$     \\ \hline
+\<CR>varsigma & $\varsigma$ & omega   & $\omega$   & eta        & $\eta$        & xi     & $\xi$     \\ \hline
+\<CR>Gamma    & $\Gamma$    & Lambda  & $\Lambda$  & Sigma      & $\Sigma$      & Psi    & $\Psi$    \\ \hline
+\<CR>Delta    & $\Delta$    & Upsilon & $\Upsilon$ & Omega      & $\Omega$      & Theta  & $\Theta$  \\ \hline
+\<CR>Pi       & $\Pi$       & Phi     & $\Phi$     & 0          & 0             & 1      & 1         \\ \hline
 \<CR>\end{tabular}
 
 autocmd BufEnter *.tex,*.html iabbr <buffer> tab55_tabular 
@@ -1150,7 +1140,7 @@ autocmd BufEnter *.java iabbr <buffer> jtime_stop_watch
 \<CR>tf = System.currentTimeMillis();
 \<CR>Print.pbl("Finish. Total time:" + (tf - ti));
 
-autocmd BufEnter *.java iabbr <buffer> jarray_array_list 
+autocmd BufEnter *.java iabbr <buffer> jarray_array_to_list 
 \<CR>String[] array = str.split("\\s+");
 \<CR>List<String> list = Arrays.asList(array);
 
