@@ -226,8 +226,22 @@
        end{aligned}
     end{equation}
 
+    gr11_greek_letter : *.tex,*.html  
+    \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+    alpha    & $\alpha$    & theta   & $\theta$   & tau        & $\tau$        & beta   & $\beta$   \\ \hline
+    vartheta & $\vartheta$ & pi      & $\pi$      & upsilon    & $\upsilon$    & gamma  & $\gamma$  \\ \hline
+    varpi    & $\varpi$    & phi     & $\phi$     & delta      & $\delta$      & kappa  & $\kappa$  \\ \hline
+    rho      & $\rho$      & varphi  & $\varphi$  & epsilon    & $\epsilon$    & lambda & $\lambda$ \\ \hline
+    varrho   & $\varrho$   & chi     & $\chi$     & varepsilon & $\varepsilon$ & mu     & $\mu$     \\ \hline
+    sigma    & $\sigma$    & psi     & $\psi$     & zeta       & $\zeta$       & nu     & $\nu$     \\ \hline
+    varsigma & $\varsigma$ & omega   & $\omega$   & eta        & $\eta$        & xi     & $\xi$     \\ \hline
+    Gamma    & $\Gamma$    & Lambda  & $\Lambda$  & Sigma      & $\Sigma$      & Psi    & $\Psi$    \\ \hline
+    Delta    & $\Delta$    & Upsilon & $\Upsilon$ & Omega      & $\Omega$      & Theta  & $\Theta$  \\ \hline
+    Pi       & $\Pi$       & Phi     & $\Phi$     & 0          & 0             & 1      & 1         \\ \hline
+    \end{tabular} 
+
     gr_greek_letter : *.tex,*.html  
-    \begin{tabular}{\|c\|c\|c\|c\|c\|c\|c\|c\|} \hline
+    \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
     alpha    & $\alpha$    & theta   & $\theta$   & tau        & $\tau$        & beta   & $\beta$   \\ \hline
     vartheta & $\vartheta$ & pi      & $\pi$      & upsilon    & $\upsilon$    & gamma  & $\gamma$  \\ \hline
     varpi    & $\varpi$    & phi     & $\phi$     & delta      & $\delta$      & kappa  & $\kappa$  \\ \hline
@@ -241,7 +255,7 @@
     \end{tabular} 
 
      tab55_tabular : *.tex,*.html 
-     \begin{tabular}{\|c\|c\|c\|c\|c\|} \hline
+     \begin{tabular}{|c|c|c|c|c|} \hline
      10 & 20 & 30 & 40 & 50 \\ \hline
      22 & 28 & 38 & 48 & 58 \\ \hline
      28 & 38 & 48 & 58 & 68 \\ \hline
@@ -250,7 +264,7 @@
      \end{tabular}
 
      tab44_tabular : *.tex,*.html 
-     \begin{tabular}{\|c\|c\|c\|c\|} \hline
+     \begin{tabular}{|c|c|c|c|} \hline
      10 & 20 & 30 & 40 \\ \hline
      22 & 28 & 37 & 48 \\ \hline
      28 & 38 & 48 & 58 \\ \hline
@@ -258,7 +272,7 @@
     \end{tabular}
 
     tab33_tabular : *.tex,*.html 
-    \begin{tabular}{\|c\|c\|c\|} \hline
+    \begin{tabular}{|c|c|c|} \hline
      10 & 20 & 30  \\ \hline
      22 & 28 & 38  \\ \hline
      28 & 38 & 48  \\ \hline
@@ -362,17 +376,17 @@
     \]
 
     matv_3x3 : *.tex,*.html 
-    \left\| \begin{array}{ccc}
+    \left| \begin{array}{ccc}
     a & b & c \\
     d & e & f \\
-    g & h & i \end{array} \right\| 
+    g & h & i \end{array} \right| 
 
     matv_3x3_[ : *.tex,*.html 
     \[ 
-        \left\| \begin{array}{ccc}
+        \left| \begin{array}{ccc}
         a & b & c \\
         d & e & f \\
-        g & h & i \end{array} \right\| 
+        g & h & i \end{array} \right| 
     \]
 
     mat_4x4_m_n_subscript : *.tex,*.html  
@@ -444,17 +458,17 @@
 
     det_3x3_lambda_array : *.tex,*.html 
     \[ 
-        \chi(\lambda) = \left\| \begin{array}{ccc}
+        \chi(\lambda) = \left| \begin{array}{ccc}
         \lambda - a & -b & -c \\
         -d & \lambda - e & -f \\
-        -g & -h & \lambda - i \end{array} \right\| 
+        -g & -h & \lambda - i \end{array} \right| 
     \]
 
     det_2x2_array : *.tex,*.html 
     \[ 
-        \left\| \begin{array}{cc}
+        \left| \begin{array}{cc}
         a & b \\
-        c & d \end{array} \right\| 
+        c & d \end{array} \right| 
     \]
 
     det_2x2_vmatrix : *.tex,*.html 

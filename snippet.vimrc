@@ -222,6 +222,20 @@ autocmd BufEnter *.tex,*.html iabbr <buffer> eqq
 \<CR>end{aligned}
 \<CR>end{equation}
 
+autocmd BufEnter *.tex,*.html iabbr <buffer> gr11_greek_letter 
+\<CR>\begin{tabular}{\|c\|c\|c\|c\|c\|c\|c\|c\|} \hline
+\<CR>alpha    & $\alpha$    & theta   & $\theta$   & tau        & $\tau$        & beta   & $\beta$   \\ \hline
+\<CR>vartheta & $\vartheta$ & pi      & $\pi$      & upsilon    & $\upsilon$    & gamma  & $\gamma$  \\ \hline
+\<CR>varpi    & $\varpi$    & phi     & $\phi$     & delta      & $\delta$      & kappa  & $\kappa$  \\ \hline
+\<CR>rho      & $\rho$      & varphi  & $\varphi$  & epsilon    & $\epsilon$    & lambda & $\lambda$ \\ \hline
+\<CR>varrho   & $\varrho$   & chi     & $\chi$     & varepsilon & $\varepsilon$ & mu     & $\mu$     \\ \hline
+\<CR>sigma    & $\sigma$    & psi     & $\psi$     & zeta       & $\zeta$       & nu     & $\nu$     \\ \hline
+\<CR>varsigma & $\varsigma$ & omega   & $\omega$   & eta        & $\eta$        & xi     & $\xi$     \\ \hline
+\<CR>Gamma    & $\Gamma$    & Lambda  & $\Lambda$  & Sigma      & $\Sigma$      & Psi    & $\Psi$    \\ \hline
+\<CR>Delta    & $\Delta$    & Upsilon & $\Upsilon$ & Omega      & $\Omega$      & Theta  & $\Theta$  \\ \hline
+\<CR>Pi       & $\Pi$       & Phi     & $\Phi$     & 0          & 0             & 1      & 1         \\ \hline
+\<CR>\end{tabular}
+
 autocmd BufEnter *.tex,*.html iabbr <buffer> gr_greek_letter 
 \<CR>\begin{tabular}{\|c\|c\|c\|c\|c\|c\|c\|c\|} \hline
 \<CR>alpha    & $\alpha$    & theta   & $\theta$   & tau        & $\tau$        & beta   & $\beta$   \\ \hline
