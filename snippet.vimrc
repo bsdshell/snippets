@@ -2,6 +2,10 @@ autocmd BufEnter *.vimrc iabbr <buffer> vdb
 \<CR>echo '1[' . &completefunc .']' . '2[' . &completefunc .']'
 \<CR>3sleep
 
+autocmd BufEnter * iabbr <buffer> google_book_path 
+\<CR>Reading multiple thread in linkedlist, queue and hashmap.
+\<CR>/Users/cat/GoogleDrive/Books/thread_concurrent_linkedlist.pdf
+
 autocmd BufEnter *.tex,*.html iabbr <buffer> proof_template 
 \<CR>\begin{proof} this is statement that you need to prove
 \<CR>\intertext{Let \lambda \in \mathbb{R}^n}
@@ -206,6 +210,12 @@ autocmd BufEnter *.tex iabbr <buffer> ltree_graph_simple_6nodes
 \<CR>\end{scope}
 \<CR>\end{tikzpicture}
 
+autocmd BufEnter *.html iabbr <buffer> ht_mycode 
+\<CR><pre class="mycode">
+\<CR><span class="bo">[IO a] is an action</span>
+\<CR>fun::String->String
+\<CR></pre>
+
 autocmd BufEnter *.tex,*.html iabbr <buffer> eqb 
 \<CR>\begin{equation}
 \<CR>\begin{aligned}
@@ -216,11 +226,11 @@ autocmd BufEnter *.tex,*.html iabbr <buffer> eqe
 
 autocmd BufEnter *.tex,*.html iabbr <buffer> eqq 
 \<CR>\begin{equation}
-\<CR>begin{aligned}
+\<CR>\begin{aligned}
 \<CR>x & = y + 1
 \<CR>x & = z + 3
-\<CR>end{aligned}
-\<CR>end{equation}
+\<CR>\end{aligned}
+\<CR>\end{equation}
 
 autocmd BufEnter *.tex,*.html iabbr <buffer> gr11_greek_letter 
 \<CR>\begin{tabular}{\|c\|c\|c\|c\|c\|c\|c\|c\|} \hline
@@ -274,7 +284,7 @@ autocmd BufEnter *.tex,*.html iabbr <buffer> tab33_tabular
 \<CR>28 & 38 & 48  \\ \hline
 \<CR>\end{tabular}
 
-autocmd BufEnter span_2_vector_$ iabbr <buffer> span_2_vector_$ 
+autocmd BufEnter *.tex,*.html iabbr <buffer> span_2_vector_$ 
 \<CR>%\usepackage{amsmath,amsfonts}  amsfonts are needed
 \<CR>%\DeclareMathOperator{\SPAN}{span} span is defined macro
 \<CR>$\SPAN \left\{
@@ -288,7 +298,7 @@ autocmd BufEnter span_2_vector_$ iabbr <buffer> span_2_vector_$
 \<CR>\end{array} \right]
 \<CR>\right\}$
 
-autocmd BufEnter span_2_vector_[ iabbr <buffer> span_2_vector_[ 
+autocmd BufEnter *.tex,*.html iabbr <buffer> span_2_vector_[ 
 \<CR>%\usepackage{amsmath,amsfonts}  amsfonts are needed
 \<CR>%\DeclareMathOperator{\SPAN}{span} span is defined macro
 \<CR>\[ \SPAN \left\{
@@ -302,7 +312,7 @@ autocmd BufEnter span_2_vector_[ iabbr <buffer> span_2_vector_[
 \<CR>\end{array} \right]
 \<CR>\right\} \]
 
-autocmd BufEnter span_matrix_$ iabbr <buffer> span_matrix_$ 
+autocmd BufEnter *.tex,*.html iabbr <buffer> span_matrix_$ 
 \<CR>%\usepackage{amsmath,amsfonts}  amsfonts are needed
 \<CR>%\DeclareMathOperator{\SPAN}{span} span is defined macro
 \<CR>$\SPAN \left\{
@@ -312,7 +322,7 @@ autocmd BufEnter span_matrix_$ iabbr <buffer> span_matrix_$
 \<CR>\end{bmatrix}
 \<CR>\right\}$
 
-autocmd BufEnter span_matrix_[ iabbr <buffer> span_matrix_[ 
+autocmd BufEnter *.tex,*.html iabbr <buffer> span_matrix_[ 
 \<CR>%\usepackage{amsmath,amsfonts}  amsfonts are needed
 \<CR>%\DeclareMathOperator{\SPAN}{span} span is defined macro
 \<CR>\[ \SPAN \left\{
@@ -322,14 +332,14 @@ autocmd BufEnter span_matrix_[ iabbr <buffer> span_matrix_[
 \<CR>\end{bmatrix}
 \<CR>\right\} \]
 
-autocmd BufEnter mat_3_vector iabbr <buffer> mat_3_vector 
+autocmd BufEnter *.tex,*.html iabbr <buffer> mat_3_vector 
 \<CR>\left[ \begin{array}{c}
 \<CR>1 \\
 \<CR>0 \\
 \<CR>0
 \<CR>\end{array} \right]
 
-autocmd BufEnter mat_2_vector iabbr <buffer> mat_2_vector 
+autocmd BufEnter *.tex,*.html iabbr <buffer> mat_2_vector 
 \<CR>\left[ \begin{array}{c}
 \<CR>1 \\
 \<CR>0
@@ -768,6 +778,68 @@ autocmd BufEnter *.cpp,*.c,*.h iabbr <buffer> prr
 \<CR>printf("---------------------------------\n");
 \<CR>printf("=================================\n");
 
+autocmd BufEnter *.java iabbr <buffer> jlogger_simple 
+\<CR>private final static Logger LOGGER = Aron.logInit(Main.class.getName(), "/Users/cat/myfile/github/java/text/Logging3.txt");
+\<CR>LOGGER.info("LOGGER.info logging");
+
+autocmd BufEnter *.java iabbr <buffer> jlogger_logger 
+\<CR>// import java.util.logging.Level;
+\<CR>// import java.util.logging.FileHandler;
+\<CR>// import java.util.logging.Formatter;
+\<CR>// import java.util.logging.Level;
+\<CR>// import java.util.logging.Logger;
+\<CR>// import java.util.logging.SimpleFormatter;
+\<CR>//
+\<CR>private final static Logger LOGGER = Logger.getLogger(LoggerExample.class.getName());
+\<CR>static private FileHandler fileTxt;
+\<CR>static private SimpleFormatter formatterTxt;
+\<CR>//
+\<CR>fileTxt = new FileHandler("./text/Logging.txt");
+\<CR>formatterTxt = new SimpleFormatter();
+\<CR>LOGGER.setLevel(Level.INFO);
+\<CR>fileTxt.setFormatter(formatterTxt);
+\<CR>LOGGER.addHandler(fileTxt);
+\<CR>//
+\<CR>LOGGER.info("Logging an INFO-level message {0}");
+
+autocmd BufEnter *.java iabbr <buffer> jthread_simple_thread 
+\<CR>class MyThread implements Runnable{
+\<CR>public int num;
+\<CR>public MyThread(int num){
+\<CR>this.num = num;
+\<CR>}
+\<CR>public void run(){
+\<CR>for(int i=0; i<10; i++){
+\<CR>this.num += 1;
+\<CR>Aron.pbl(num);
+\<CR>}
+\<CR>}
+\<CR>}
+
+autocmd BufEnter *.java iabbr <buffer> jthread_AtomicInteger 
+\<CR>// import java.util.concurrent.atomic.AtomicInteger;
+\<CR>AtomicInteger atom = new AtomicInteger(0);
+\<CR>atom.incrementAndGet();
+\<CR>atom.get()
+
+autocmd BufEnter *.java iabbr <buffer> jthread_thread_id 
+\<CR>Thread.sleep(2000);  // sleep two seconds
+\<CR>Thread.currentThread().getId();
+\<CR>Print.pbl("Thread_id   =" + Thread.currentThread().getId());
+\<CR>Print.pbl("Thread_name =" + Thread.currentThread().getName());
+\<CR>//import java.util.Date;
+\<CR>Print.pbl("Current time=" + new Date());
+\<CR>Thread t = new Thread(new MyClass(queue));
+\<CR>t.start();
+
+autocmd BufEnter *.java iabbr <buffer> jdate_date 
+\<CR>//import java.util.Date;
+\<CR>Print.pbl(new Date());
+
+autocmd BufEnter *.java iabbr <buffer> jtim_date 
+\<CR>//import java.util.Date;
+\<CR>Print.pbl(new Date());
+
 autocmd BufEnter *.java iabbr <buffer> jtime_Duration 
 \<CR>// import java.time.LocalDateTime;
 \<CR>// import java.time.Duration;
@@ -974,12 +1046,80 @@ autocmd BufEnter *.java iabbr <buffer> jarr_array2d_one_8x8
 \<CR>int height = arr2d.length;
 \<CR>int width = arr2d[0].length;
 
-autocmd BufEnter *.java iabbr <buffer> prr_ 
-\<CR>System.out.println("[" + xxx + "]");
-\<CR>System.out.println("\n---------------------------------");
+autocmd BufEnter *.c,*.cpp,*.h iabbr <buffer> gl_print 
+\<CR>char buffer[50];
+\<CR>sprintf(buffer, "[%f][%f][%f]", camera.getX(), camera.getY(), camera.getZ());
+\<CR>printFormatNew(100, 200, buffer);
 
-autocmd BufEnter *.java iabbr <buffer> prr 
-\<CR>System.out.println("[" + xxx + "]");
+autocmd BufEnter *.c,*.cpp,*.h iabbr <buffer> gl_aspect 
+\<CR>float aspect = GLfloat(w)/GLfloat(h);
+\<CR>fprintf(stderr, "w=[%i] h=[%i] aspect=[%f]\n", w, h, aspect);
+
+autocmd BufEnter *.c,*.cpp,*.h iabbr <buffer> gl_draw 
+\<CR>glBegin(GL_LINE_LOOP);
+\<CR>glVertex3f(-1, 1, 0);
+\<CR>glVertex3f(1, 1, 0);
+\<CR>glVertex3f(1, -1, 0);
+\<CR>glVertex3f(-1, -1, 0);
+\<CR>glEnd();
+
+autocmd BufEnter *.c,*.cpp,*.h iabbr <buffer> gl_pp 
+\<CR>ppf("w=[%f] h=[%f]\n", w, h); // standard error
+\<CR>pp("w=[%f] h=[%f]\n", w, h);  // standard output
+
+autocmd BufEnter *.c,*.cpp,*.h iabbr <buffer> gl_surface 
+\<CR>GLfloat xx = 1.0;
+\<CR>GLfloat yy = 1.0;
+\<CR>GLfloat zz = 1.0;
+\<CR>GLfloat myarr[4][4][3] = {
+\<CR>{
+\<CR>{0.0, 0.0, 0.0f},
+\<CR>{1.0, 1.0, 0.0f},
+\<CR>{2.0, 1.0, 0.0f},
+\<CR>{3.0, 0.0, 0.0f}
+\<CR>},
+\<CR>{
+\<CR>{0.0, 0.0, 0.0f + xx},
+\<CR>{1.0, 5.0, 0.0f + xx},
+\<CR>{2.0, 5.0, 0.0f + xx},
+\<CR>{3.0, 0.0, 0.0f + xx}
+\<CR>},
+\<CR>{
+\<CR>{0.0, 0.0, 0.0f + 2*xx},
+\<CR>{1.0, -3.0, 0.0f + 2*xx},
+\<CR>{2.0, -2.0, 0.0f + 2*xx},
+\<CR>{3.0, 0.0, 0.0f + 2*xx}
+\<CR>},
+\<CR>{
+\<CR>{0.0, 0.0, 0.0f + 3*xx},
+\<CR>{1.0, 1.0, 0.0f + 3*xx},
+\<CR>{2.0, 1.0, 0.0f + 3*xx},
+\<CR>{3.0, 0.0, 0.0f + 3*xx}
+\<CR>}
+\<CR>};
+\<CR>BezierSurfaceBatch bezier(myarr);
+\<CR>//bezier.create();
+\<CR>//bezier.draw();
+
+autocmd BufEnter *.sh,*.c,*.cpp,*.h iabbr <buffer> gcc_deprecated_warning 
+\<CR>g++ -Wno-deprecated -std=c++11 -g -v -o xxx xxx.cpp -I/Users/cat/myfile/github/cpp/MyLib -framework GLUT -framework OpenGL
+
+autocmd BufEnter *.c,*.cpp,*.h iabbr <buffer> gl_header 
+\<CR>#ifdef __APPLE_CC__
+\<CR>#include <GLUT/glut.h>
+\<CR>#else
+\<CR>#include <GL/glut.h>
+\<CR>#endif
+\<CR>#include <cmath>
+\<CR>#include "BezierCurve.h"
+\<CR>#include "Curve.h"
+\<CR>#include "Torus.h"
+\<CR>#include "CheckerBoard.h"
+\<CR>#include "Circle.h"
+\<CR>#include "Cylinder.h"
+\<CR>#include "DrawQuad.h"
+\<CR>#include "Coordinate.h"
+\<CR>#include "Color.h"
 
 autocmd BufEnter *.cpp,*.c,*.h iabbr <buffer> outt 
 \<CR>std::cout<<"["<<arr[i]<<"]"<<std::endl;
@@ -1003,10 +1143,26 @@ autocmd BufEnter *.cpp,*.c,*.h iabbr <buffer> cheadd
 \<CR>#include "Aron.h"
 
 autocmd BufEnter *.java iabbr <buffer> jheadd 
+\<CR>import java.util.Vector;
 \<CR>import java.util.ArrayList;
 \<CR>import java.util.List;
 \<CR>import java.util.StringTokenizer;
-\<CR>import java.util.Vector;
+\<CR>import java.util.Arrays;
+\<CR>import java.util.List;
+\<CR>import java.util.Queue;
+\<CR>import java.util.LinkedList;
+\<CR>import java.util.concurrent.atomic.AtomicInteger;
+\<CR>import java.util.Collections;
+\<CR>//
+\<CR>import java.util.logging.Level;
+\<CR>import java.util.logging.FileHandler;
+\<CR>import java.util.logging.Formatter;
+\<CR>import java.util.logging.Level;
+\<CR>import java.util.logging.Logger;
+\<CR>import java.util.logging.SimpleFormatter;
+\<CR>import java.io.IOException;
+\<CR>//
+\<CR>import classfile.*;
 
 autocmd BufEnter *.cpp,*.c,*.h iabbr <buffer> pree 
 \<CR>printf("[%s]--------\n", __PRETTY_FUNCTION__);
@@ -1038,6 +1194,31 @@ autocmd BufEnter *.java iabbr <buffer> tess
 \<CR>static void test2(){
 \<CR>Aron.beg();
 \<CR>Aron.end();
+\<CR>}
+
+autocmd BufEnter * iabbr <buffer> vimcmmand_vim_command 
+\<CR>:set spell " enable spelling
+\<CR>:set nospell " disable spelling
+\<CR>zg      " add word to spellfile, spell file, spell-file, spelling file, spellingfile
+\<CR>C-X C-D " definition
+\<CR>C-X C-K " dictionary
+\<CR>C-X C-X " suggestion
+\<CR>C-X C-L " line completion
+\<CR>C-X C-N " local keyword completion
+\<CR>C-X C-U " user defined completion
+
+autocmd BufEnter *.java iabbr <buffer> jsubstring_substring_subList_prefix_suffix 
+\<CR>String line = "0123456789";
+\<CR>for(int i=0; i<line.length(); i++){
+\<CR>String prefix = line.substring(0, i);
+\<CR>String suffix = line.substring(i, line.length());
+\<CR>Print.pbl("prefix=" + prefix + " suffix=" + suffix);
+\<CR>}
+\<CR>// mutable list
+\<CR>List<String> list = new ArrayList<>(Arrays.asList("cat", "dog", "cow"));
+\<CR>for(int i=0; i<list.size(); i++){
+\<CR>List<String> subList = list.subList(0, i+1);
+\<CR>Aron.printList(subList);
 \<CR>}
 
 autocmd BufEnter *.java iabbr <buffer> jtry_try_catch 
@@ -1158,6 +1339,10 @@ autocmd BufEnter *.java iabbr <buffer> jarray_array_to_list
 \<CR>String[] array = str.split("\\s+");
 \<CR>List<String> list = Arrays.asList(array);
 
+autocmd BufEnter *.java iabbr <buffer> jlist_list_to_array 
+\<CR>List<String> list = Arrays.asList("cat", "dog", "cow");
+\<CR>String[] arr = list.toArray(new String[list.size()]);
+
 autocmd BufEnter *.java iabbr <buffer> jlist_array_list 
 \<CR>String[] array = str.split("\\s+");
 \<CR>List<String> list = Arrays.asList(array);
@@ -1257,6 +1442,12 @@ autocmd BufEnter *.java iabbr <buffer> jtoken
 \<CR>String token = stoken.nextToken();
 \<CR>list.add(token);
 \<CR>System.out.println(token);
+\<CR>}
+
+autocmd BufEnter *.java iabbr <buffer> jmap_print_map 
+\<CR>Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+\<CR>for(Map.Entry<Integer, Integer> entry : map.entrySet()){
+\<CR>System.out.println("[" + entry.getKey() + " , " + entry.getValue() + "]");
 \<CR>}
 
 autocmd BufEnter *.java iabbr <buffer> jmap_iterator_Integer 

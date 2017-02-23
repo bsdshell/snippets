@@ -2,6 +2,10 @@
     echo '1[' . &completefunc .']' . '2[' . &completefunc .']'
     3sleep
     
+    google_book_path: *
+    Reading multiple thread in linkedlist, queue and hashmap.
+    /Users/cat/GoogleDrive/Books/thread_concurrent_linkedlist.pdf
+
     proof_template : *.tex,*.html
     \begin{proof} this is statement that you need to prove
     \intertext{Let \lambda \in \mathbb{R}^n}
@@ -207,7 +211,11 @@
     \end{scope}
     \end{tikzpicture}
 
-
+    ht_mycode : *.html
+    <pre class="mycode">
+    <span class="bo">[IO a] is an action</span>
+    fun::String->String
+    </pre>
 
 
     eqb : *.tex,*.html  
@@ -220,11 +228,11 @@
 
     eqq : *.tex,*.html 
     \begin{equation}
-       begin{aligned}
+       \begin{aligned}
        x & = y + 1
        x & = z + 3
-       end{aligned}
-    end{equation}
+       \end{aligned}
+    \end{equation}
 
     gr11_greek_letter : *.tex,*.html  
     \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
@@ -278,7 +286,7 @@
      28 & 38 & 48  \\ \hline
     \end{tabular}
 
-    span_2_vector_$
+    span_2_vector_$ : *.tex,*.html
     %\usepackage{amsmath,amsfonts}  amsfonts are needed 
     %\DeclareMathOperator{\SPAN}{span} span is defined macro
     $\SPAN \left\{
@@ -292,7 +300,7 @@
         \end{array} \right]
     \right\}$
 
-    span_2_vector_[
+    span_2_vector_[ : *.tex,*.html
     %\usepackage{amsmath,amsfonts}  amsfonts are needed 
     %\DeclareMathOperator{\SPAN}{span} span is defined macro
     \[ \SPAN \left\{
@@ -306,7 +314,7 @@
         \end{array} \right]
     \right\} \]
 
-    span_matrix_$
+    span_matrix_$ : *.tex,*.html
     %\usepackage{amsmath,amsfonts}  amsfonts are needed 
     %\DeclareMathOperator{\SPAN}{span} span is defined macro
     $\SPAN \left\{
@@ -316,7 +324,7 @@
     \end{bmatrix} 
     \right\}$
 
-    span_matrix_[
+    span_matrix_[ : *.tex,*.html
     %\usepackage{amsmath,amsfonts}  amsfonts are needed 
     %\DeclareMathOperator{\SPAN}{span} span is defined macro
     \[ \SPAN \left\{
@@ -326,14 +334,14 @@
     \end{bmatrix} 
     \right\} \]
 
-    mat_3_vector
+    mat_3_vector : *.tex,*.html
     \left[ \begin{array}{c}   
     1 \\
     0 \\
     0 
     \end{array} \right]
 
-    mat_2_vector
+    mat_2_vector : *.tex,*.html
     \left[ \begin{array}{c}   
     1 \\
     0 
@@ -779,6 +787,71 @@
     printf("=================================\n");
 
 
+    jlogger_simple : *.java
+    private final static Logger LOGGER = Aron.logInit(Main.class.getName(), "/Users/cat/myfile/github/java/text/Logging3.txt");
+    LOGGER.info("LOGGER.info logging");
+
+
+    jlogger_logger : *.java
+    // import java.util.logging.Level;
+    // import java.util.logging.FileHandler;
+    // import java.util.logging.Formatter;
+    // import java.util.logging.Level;
+    // import java.util.logging.Logger;
+    // import java.util.logging.SimpleFormatter;
+    //
+    private final static Logger LOGGER = Logger.getLogger(LoggerExample.class.getName());
+    static private FileHandler fileTxt;
+    static private SimpleFormatter formatterTxt;
+    //
+    fileTxt = new FileHandler("./text/Logging.txt");
+    formatterTxt = new SimpleFormatter();
+    LOGGER.setLevel(Level.INFO);
+    fileTxt.setFormatter(formatterTxt);
+    LOGGER.addHandler(fileTxt);
+    //
+    LOGGER.info("Logging an INFO-level message {0}");
+ 
+
+    jthread_simple_thread : *.java
+    class MyThread implements Runnable{
+        public int num;
+        public MyThread(int num){
+            this.num = num;
+        }
+        public void run(){
+            for(int i=0; i<10; i++){
+                this.num += 1;
+                Aron.pbl(num);
+            }
+        }
+    }
+
+    jthread_AtomicInteger : *.java
+    // import java.util.concurrent.atomic.AtomicInteger;
+    AtomicInteger atom = new AtomicInteger(0);
+    atom.incrementAndGet();
+    atom.get() 
+
+    jthread_thread_id : *.java
+    Thread.sleep(2000);  // sleep two seconds
+    Thread.currentThread().getId();
+    Print.pbl("Thread_id   =" + Thread.currentThread().getId());
+    Print.pbl("Thread_name =" + Thread.currentThread().getName());
+    //import java.util.Date;
+    Print.pbl("Current time=" + new Date()); 
+    Thread t = new Thread(new MyClass(queue));
+    t.start();
+
+    jdate_date: *.java
+    //import java.util.Date;
+    Print.pbl(new Date());
+
+    jtim_date: *.java
+    //import java.util.Date;
+    Print.pbl(new Date());
+
+
     jtime_Duration : *.java
     // import java.time.LocalDateTime;
     // import java.time.Duration;
@@ -989,12 +1062,82 @@
     int height = arr2d.length;
     int width = arr2d[0].length;
 
-    prr_ : *.java 
-    System.out.println("[" + xxx + "]");
-    System.out.println("\n---------------------------------");
+    gl_print : *.c,*.cpp,*.h
+    char buffer[50];
+    sprintf(buffer, "[%f][%f][%f]", camera.getX(), camera.getY(), camera.getZ());
+    printFormatNew(100, 200, buffer);
 
-    prr : *.java 
-    System.out.println("[" + xxx + "]");
+    gl_aspect : *.c,*.cpp,*.h
+    float aspect = GLfloat(w)/GLfloat(h);
+    fprintf(stderr, "w=[%i] h=[%i] aspect=[%f]\n", w, h, aspect);
+
+    gl_draw   : *.c,*.cpp,*.h
+    glBegin(GL_LINE_LOOP);
+    glVertex3f(-1, 1, 0);
+    glVertex3f(1, 1, 0);
+    glVertex3f(1, -1, 0);
+    glVertex3f(-1, -1, 0);
+    glEnd();
+
+    gl_pp   : *.c,*.cpp,*.h
+    ppf("w=[%f] h=[%f]\n", w, h); // standard error
+    pp("w=[%f] h=[%f]\n", w, h);  // standard output
+
+    gl_surface : *.c,*.cpp,*.h
+    GLfloat xx = 1.0;
+    GLfloat yy = 1.0;
+    GLfloat zz = 1.0;
+    GLfloat myarr[4][4][3] = {
+        {
+            {0.0, 0.0, 0.0f},
+            {1.0, 1.0, 0.0f},
+            {2.0, 1.0, 0.0f},
+            {3.0, 0.0, 0.0f}
+        },
+        {
+            {0.0, 0.0, 0.0f + xx},
+            {1.0, 5.0, 0.0f + xx},
+            {2.0, 5.0, 0.0f + xx},
+            {3.0, 0.0, 0.0f + xx}
+        },
+        {
+            {0.0, 0.0, 0.0f + 2*xx},
+            {1.0, -3.0, 0.0f + 2*xx},
+            {2.0, -2.0, 0.0f + 2*xx},
+            {3.0, 0.0, 0.0f + 2*xx}
+        },
+        {
+            {0.0, 0.0, 0.0f + 3*xx},
+            {1.0, 1.0, 0.0f + 3*xx},
+            {2.0, 1.0, 0.0f + 3*xx},
+            {3.0, 0.0, 0.0f + 3*xx}
+        }
+    };
+    BezierSurfaceBatch bezier(myarr);
+    //bezier.create();
+    //bezier.draw();
+
+
+
+    gcc_deprecated_warning : *.sh,*.c,*.cpp,*.h
+    g++ -Wno-deprecated -std=c++11 -g -v -o xxx xxx.cpp -I/Users/cat/myfile/github/cpp/MyLib -framework GLUT -framework OpenGL 
+
+    gl_header : *.c,*.cpp,*.h
+    #ifdef __APPLE_CC__
+    #include <GLUT/glut.h>
+    #else
+    #include <GL/glut.h>
+    #endif
+    #include <cmath>
+    #include "BezierCurve.h"
+    #include "Curve.h"
+    #include "Torus.h"
+    #include "CheckerBoard.h"
+    #include "Circle.h"
+    #include "Cylinder.h"
+    #include "DrawQuad.h"
+    #include "Coordinate.h"
+    #include "Color.h" 
 
     outt : *.cpp,*.c,*.h 
     std::cout<<"["<<arr[i]<<"]"<<std::endl;
@@ -1018,10 +1161,26 @@
     #include "Aron.h"
 
     jheadd : *.java 
+    import java.util.Vector;
     import java.util.ArrayList;
     import java.util.List;
     import java.util.StringTokenizer;
-    import java.util.Vector;
+    import java.util.Arrays;
+    import java.util.List;
+    import java.util.Queue; 
+    import java.util.LinkedList; 
+    import java.util.concurrent.atomic.AtomicInteger;
+    import java.util.Collections;
+    //
+    import java.util.logging.Level;
+    import java.util.logging.FileHandler;
+    import java.util.logging.Formatter;
+    import java.util.logging.Level;
+    import java.util.logging.Logger;
+    import java.util.logging.SimpleFormatter;
+    import java.io.IOException;
+    //
+    import classfile.*;
 
     pree: *.cpp,*.c,*.h 
     printf("[%s]--------\n", __PRETTY_FUNCTION__);
@@ -1055,7 +1214,30 @@
         Aron.end();
     }
     
-    
+    vimcommand_vim_command : * 
+    :set spell " enable spelling
+    :set nospell " disable spelling
+    zg      " add word to spellfile, spell file, spell-file, spelling file, spellingfile
+    C-X C-D " definition
+    C-X C-K " dictionary
+    C-X C-X " suggestion
+    C-X C-L " line completion
+    C-X C-N " local keyword completion
+    C-X C-U " user defined completion 
+
+    jsubstring_substring_subList_prefix_suffix : *.java
+    String line = "0123456789";
+    for(int i=0; i<line.length(); i++){
+        String prefix = line.substring(0, i);
+        String suffix = line.substring(i, line.length());
+        Print.pbl("prefix=" + prefix + " suffix=" + suffix);
+    } 
+    // mutable list
+    List<String> list = new ArrayList<>(Arrays.asList("cat", "dog", "cow")); 
+    for(int i=0; i<list.size(); i++){
+        List<String> subList = list.subList(0, i+1);
+        Aron.printList(subList);
+    } 
 
 
     jtry_try_catch : *.java
@@ -1176,6 +1358,10 @@
     String[] array = str.split("\\s+");
     List<String> list = Arrays.asList(array);
 
+    jlist_list_to_array: *.java
+    List<String> list = Arrays.asList("cat", "dog", "cow");
+    String[] arr = list.toArray(new String[list.size()]);
+
     jlist_array_list : *.java
     String[] array = str.split("\\s+");
     List<String> list = Arrays.asList(array);
@@ -1277,6 +1463,12 @@
         String token = stoken.nextToken();
         list.add(token);
         System.out.println(token);
+    }
+
+    jmap_print_map : *.java
+    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+    for(Map.Entry<Integer, Integer> entry : map.entrySet()){
+        System.out.println("[" + entry.getKey() + " , " + entry.getValue() + "]");
     }
 
     jmap_iterator_Integer : *.java
