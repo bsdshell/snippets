@@ -1,3 +1,7 @@
+
+    git_fast_forward  : *
+    https://ariya.io/2013/09/fast-forward-git-merge
+
     vdb  : *.vimrc
     echo '1[' . &completefunc .']' . '2[' . &completefunc .']'
     3sleep
@@ -1224,6 +1228,8 @@
     C-X C-L " line completion
     C-X C-N " local keyword completion
     C-X C-U " user defined completion 
+    :fp     " copy current full path
+    :ip     " change to init path
 
     jsubstring_substring_subList_prefix_suffix : *.java
     String line = "0123456789";

@@ -1,3 +1,6 @@
+autocmd BufEnter * iabbr <buffer> git_fast_forward 
+\<CR>https://ariya.io/2013/09/fast-forward-git-merge
+
 autocmd BufEnter *.vimrc iabbr <buffer> vdb 
 \<CR>echo '1[' . &completefunc .']' . '2[' . &completefunc .']'
 \<CR>3sleep
@@ -1196,7 +1199,7 @@ autocmd BufEnter *.java iabbr <buffer> tess
 \<CR>Aron.end();
 \<CR>}
 
-autocmd BufEnter * iabbr <buffer> vimcmmand_vim_command 
+autocmd BufEnter * iabbr <buffer> vimcommand_vim_command 
 \<CR>:set spell " enable spelling
 \<CR>:set nospell " disable spelling
 \<CR>zg      " add word to spellfile, spell file, spell-file, spelling file, spellingfile
@@ -1206,6 +1209,8 @@ autocmd BufEnter * iabbr <buffer> vimcmmand_vim_command
 \<CR>C-X C-L " line completion
 \<CR>C-X C-N " local keyword completion
 \<CR>C-X C-U " user defined completion
+\<CR>:fp     " copy current full path
+\<CR>:ip     " change to init path
 
 autocmd BufEnter *.java iabbr <buffer> jsubstring_substring_subList_prefix_suffix 
 \<CR>String line = "0123456789";
