@@ -1,6 +1,77 @@
 
+    Intellij_shortcut_key : * : Intellij shortcut key
+    `[
+        // intellij shortcut key
+        Ctrl Shift      // comment block code
+        Shift Tab       // move block of code(code selection) to left
+        Tab/Shift+Tab   // indent/unintented selected line
+        Alt Right/Left  // cycle through tabs
+        Alt Shift F7    // goto usage
+        Alt Shit f      // global search
+        Alt g           // find name
+        Alt UP/Down     // move to previous/next method
+        Ctrl F12        // show all current methods
+        Ctrl W          // select code block. e.g {..}
+        Ctrl-Shift F12  // max/unmaxed window
+        Ctrl UP/Down    // move window up/down
+        Ctrl [/]        // Move to code block star/end
+        Ctrl Shift #    // book mark line, bookmark line
+        Ctrl #          // goto bookmark #, goto book mark #
+        Ctrl Alt B      // goto implementation
+        Ctrl E          // go back to implementation
+        Ctrl Alt F7     // shows usages
+        Ctrl w          // select whole word
+        Ctrl Left/Right // move cursor previous/next
+        Ctrl Shift R    // find and replace
+        Ctrl Shift j    // join line
+    `] 
+
+    git_command_all_cmds : * : git cmd, git command, git help, git tips
+    [Git command git branch show on command prompt]
+    `[
+        :git branch myfeature_branchcreate                   // create new feature branch
+        :git branch -d delete_branchdelete                   // [git delete] feature branch
+        :git branch -D delete_branchdelete                   // unmerged feature branch
+        :git checkout master                                 // switch to master branch 
+        :git merge --no-ff feature_branch                    // merge feature_branch to master without fast forwrad. 
+        :git merge feature_branch                            // merge feature_branch to master with fast forward.
+        :git rm -r --cached myfile                           // remove file from your index
+        :git refloghow                                       // all the reference log
+        :git reset --hard 828c8c0b1995                       // revert to previous commit
+        :git diff --stat hash1  hash2                        // diff two commits from two hashes 
+        :git log -- specific_file                            // get log on specific file
+        :git commit --amend -m "new message"                 // change the most recent message, amend your most recent message.
+        :git stash                                           // save your modified tracked files to a stack and that you can reapply late. 
+        :git stash list                                      // list all the stashes
+        :git rm -r myfile                                    // remove file from local repository and file system.
+        :git rm --cached rm_repos_file                       // remove file only from local repository but from file system. 
+        :git commit -m "msg" 
+        :.git/info/exclude                                   // for local file that does't need to be shared, just add file or dir pattern
+        parse_git_branch(){
+            git branch 2> /dev/null | sed -e 's/* \(.*\)/ \(\1)/'
+        }
+        export PS1="\u$(parse_git_branch)\w$"
+        \u - Username
+        \w - Full path
+        \h - Host name
+    `]
+
     git_fast_forward  : *
     https://ariya.io/2013/09/fast-forward-git-merge
+
+    git_command : * : git fast forward, git no fast forward, git merge, git rebase
+    https://ariya.io/2013/09/fast-forward-git-merge
+
+    gpg_tar_encrypted_decrypted_file : *
+    gpg -d -o password.txt password.txt.gpg // decrypt gpg file to password.txt
+    tar -czf dir.tar.gz dir                 // tar file
+    gpg -c dir.tar.gz
+    gpg -c -o dir.tar.gz dir.tar.gz.gpg     // encrypt your tar file
+    gpg --gen-key                           // generate new key
+    gpg --list-keys                         // list key
+    gpg --delete-keys C3B95227              // delete key uid=C3B95227
+    tar -czf dir.tar.gz dir                 // tar file, tar folder, tar directory, tar directories
+    tar -xzf dir.tar.gz dir                 // untar file
 
     vdb  : *.vimrc
     echo '1[' . &completefunc .']' . '2[' . &completefunc .']'
@@ -1230,6 +1301,8 @@
     C-X C-U " user defined completion 
     :fp     " copy current full path
     :ip     " change to init path
+    F7 copy
+    F8 past
 
     jsubstring_substring_subList_prefix_suffix : *.java
     String line = "0123456789";
@@ -1345,6 +1418,13 @@
     jpriority_PriorityQueue: *.java 
     Queue<String> queue = new PriorityQueue<String>(); 
 
+    jset_set_to_list: *.java
+    Set<String> set1 = new HashSet<String>(Arrays.asList("cat", "dog"));
+    List<String> list = new ArrayList<>(set1);
+    Set<String> set2 = new HashSet<>(list);
+    Aron.printSet(set1);
+    Aron.printList(list);
+
     jset_Integer: *.java
     Set<String> set = new HashSet<String>(Arrays.asList(1, 2));
 
@@ -1364,9 +1444,24 @@
     String[] array = str.split("\\s+");
     List<String> list = Arrays.asList(array);
 
-    jlist_list_to_array: *.java
+    jlist_merge_two_lists : *.java : java list
+    List<String> list1 = new ArrayList<>(Arrays.asList("cat", "dog"));
+    List<String> list2 = new ArrayList<>(Arrays.asList("Nothing"));
+    List<String> result = Stream.concat(list1.stream(), list2.stream())
+            .distinct()
+            .collect(Collectors.toList());
+
+
+    jlist_list_to_array: *.java : array to list
     List<String> list = Arrays.asList("cat", "dog", "cow");
     String[] arr = list.toArray(new String[list.size()]);
+
+    jlist_to_set: *.java
+    Set<String> set1 = new HashSet<String>(Arrays.asList("cat", "dog"));
+    List<String> list = new ArrayList<>(set1);
+    Set<String> set2 = new HashSet<>(list);
+    Aron.printSet(set1);
+    Aron.printList(list);
 
     jlist_array_list : *.java
     String[] array = str.split("\\s+");
@@ -1462,13 +1557,65 @@
     jstack_String: *.java
     Stack<String> stack = new Stack<String>();
 
-    jtoken : *.java
+    jtoken_has_more_token : *.java
     StringTokenizer stoken = new StringTokenizer(exp, "+-/*", true);
     List<String> list = new ArrayList<String>();
     while(stoken.hasMoreTokens()){
         String token = stoken.nextToken();
         list.add(token);
         System.out.println(token);
+    }
+
+    jmap_list_Integer_MapEntry: *.java
+    Map<String, List<Integer>> map = new HashMap<>();
+    List<Integer> list1 = new ArrayList<>(Arrays.asList(1, 2));
+    List<Integer> list2 = new ArrayList<>(Arrays.asList(3, 4));
+    map.put("k1", list1);
+    map.put("k2", list2);
+    for(Map.Entry<String, List<Integer>> entry : map.entrySet()){
+        Print.pbl(entry.getKey());
+        for(Integer s: entry.getValue()){
+            Print.pb(s);
+        }
+        Print.line();
+    }
+
+    jmap_list_String_MapEntry: *.java
+    Map<String, List<String>> map = new HashMap<>();
+    List<String> list1 = new ArrayList<>(Arrays.asList("v1", "v2"));
+    List<String> list2 = new ArrayList<>(Arrays.asList("vv1", "vv2"));
+    map.put("k1", list1);
+    map.put("k2", list2);
+    for(Map.Entry<String, List<String>> entry : map.entrySet()){
+        Print.pbl(entry.getKey());
+        for(String s: entry.getValue()){
+            Print.pb(s);
+        }
+        Print.line();
+    }
+
+
+    jmap_ListList_init_iterator : *.java
+    Map<String, List<List<String>>> map1 = new HashMap<>();
+    Map<String, List<List<String>>> map2 = new HashMap<>();
+    // mutable list
+    List<String> list1 = new ArrayList<>(Arrays.asList("cat", "dog", "cow"));
+    List<String> list2 = new ArrayList<>(Arrays.asList("cat1", "dog1", "cow1"));
+    List<List<String>> listList1 = new ArrayList<>();
+    listList1.add(list1);
+    List<List<String>> listList2 = new ArrayList<>();
+    listList2.add(list2);
+    //
+    map1.put("key1", listList1);
+    map2.put("key2", listList2);
+    Map<String, List<List<String>>> map = mergeMapListList(map1, map2);
+    //
+    for(Map.Entry<String, List<List<String>>> entry : map.entrySet()){
+        System.out.println("[" + entry.getKey());
+        for(List<String> list : entry.getValue()){
+            for(String s : list)
+                System.out.println("[" + s + "]");
+        }
     }
 
     jmap_print_map : *.java
@@ -1483,17 +1630,39 @@
         System.out.println("[" + entry.getKey() + " , " + entry.getValue() + "]");
     }
 
+    jmap_String_to_ListOfString : *.java
+    Map<String, List<String>> map = new HashMap<String, List<String>>();
+    for(Map.Entry<String, List<String>> entry : map.entrySet()){
+        System.out.println("[" + entry.getKey());
+        for(String s : entry.getValue()){
+            System.out.println("[" + s + "]");
+        }
+    }
+
     jmap_iterator_String: *.java
     Map<String, String> map = new HashMap<String, String>();
     for(Map.Entry<String, String> entry : map.entrySet()){
         System.out.println("[" + entry.getKey() + " , " + entry.getValue() + "]");
     }
 
-    jmap_Integer_Integer : *.java
-    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
-    jmap_String_String : *.java
+    jmap_listList_String: *.java
+    Map<String, List<List<String>>> map = new HashMap<>();
+    for(Map.Entry<String, List<List<String>>> entry : map.entrySet()){
+        System.out.println("[" + entry.getKey());
+        for(List<String> list : entry.getValue()){
+            for(String s : list)
+                System.out.println("[" + s + "]");
+        }
+    }
+
+    jmap_simple_String_Integer : *.java
+    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+    Map<Integer, String> map = new HashMap<String, String>();
     Map<String, String> map = new HashMap<String, String>();
+    Map<String, Integer> map = new HashMap<String, String>();
+    Map<String, List<String>> map = new HashMap<String, List<String>>();
+    Map<String, List<Integer>> map = new HashMap<String, List<Integer>>();
 
     jme : *.java  
     public static List<String> get(){
