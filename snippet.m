@@ -1,5 +1,201 @@
+    git_ignore_file :*: git ignore, ignore file
+    **/*.class
+    # Package Files #
+    *.war
+    *.ear
+    .idea/dictionaries/cat.xml
+    .idea/workspace.xml
+    .idea/vcs.xml
+    .idea/misc.xml 
 
-    Intellij_shortcut_key : * : Intellij shortcut key
+    eng_interest : * : english interested interesting 
+    interested - are you interested in the job.
+    interesting - it will be very interesting to see what they can come up with.
+
+    eng_at_in_on : * : english date, english in on, english on in, english at in
+    Prepositions of Time - at, in, on
+    We use:
+    at for a PRECISE TIME
+    in for MONTHS, YEARS, CENTURIES and LONG PERIODS
+    on for DAYS and DATES
+    at PRECISE TIME	
+    in MONTHS, YEARS, CENTURIES and LONG PERIODS	
+    on DAYS and DATES
+    //
+    at 3 o'clock	in May	on Sunday
+    at 10.30am	in summer	on Tuesdays
+    at noon	in the summer	on 6 March
+    at dinnertime	in 1990	on 25 Dec. 2010
+    at bedtime	in the 1990s	on Christmas Day
+    at sunrise	in the next century	on Independence Day
+    at sunset	in the Ice Age	on my birthday
+    at the moment	in the past/future	on New Year's Eve
+
+    jgradle_gradle : * : java gradle, gradle resources, gradle add resources 
+    img, /Users/cat/myfile/github/image/gradle_resources.png
+
+    jgradle_gradle : * : java gradle, gradle tutorial, build gradle
+    Gradle Build Tutorial
+    0. Check Gradle version
+       gradle -v
+       //
+    1. create default gradle java directories structure
+       gradle init --type java-library
+       //
+    2. build.gradle
+       // apply java plugin to add support for Java
+       apply plugin: 'java'
+       //
+    3. add dependencies
+        dependencies {
+            // The production code uses the SLF4J logging API at compile time
+            compile 'org.slf4j:slf4j-api:1.7.21'
+            // add test frameword dependencies
+            testCompile 'junit:junit:4.12'
+        }
+        //
+    4. add local dependencies 
+        // local jar dependencies 
+        dependencies {
+            compile files('/Users/cat/myfile/github/JavaLib/jar/AronLib.jar')
+        }
+        //
+    5. run main in gradle, add following to build.gradle
+       // assume package classfile; is in your MyMain file
+       apply plugin:'application'
+       mainClassName = "classfile.MyMain"
+       // gradle run
+    6. add resources directory to gradle
+        sourceSets {
+        java {
+            srcDir 'src/main/java'
+        }
+        main {
+                resources {
+                    srcDir 'src/main/resources'
+                    include '**/*.css'
+                }
+            }
+        }
+        //
+    7. Change project name 
+        edit settings.gradle file
+    8. add local jar to gradle
+       project/build.gradle
+       add jar files to project/libs
+       No modificaiton for build.gradle
+   
+    
+    java_code : * : java code, all java code, java screenshot, java shot, screenshot java code
+    /Users/cat/myfile/github/java/TextAreaLineHeightExample/src/Main.java
+    /Users/cat/myfile/github/java/TextAreaSimple/src/Main.java
+    /Users/cat/myfile/github/java/TextAreaFontAlignment/src/Main.java
+    img, /Users/cat/myfile/github/image/textarealine.png
+    img, /Users/cat/myfile/github/image/textflow_multiple_line.png
+    img, /Users/cat/myfile/github/image/textareafont.png
+
+
+    test_only : * : test only, mytest one, 
+    line 5
+    line 6 
+
+    pdf_view : * : java pdf, pdf viewer, java pdfbox
+    /Users/cat/myfile/github/java/PDFBoxViewer
+
+    pdf_file : * : read pdf, pdf reading 
+    img, /Users/cat/myfile/github/math/theorem.pdf
+    voicemail 
+    voicemail
+    emai
+    
+    :set spell " enable spelling
+    :set nospell " disable spelling
+    zg      " add word to spellfile, spell file, spell-file, spelling file, spellingfile
+    C-X C-D " definition
+    C-X C-K " dictionary
+    C-X C-X " suggestion
+    C-X C-L " line completion
+    C-X C-N " local keyword completion
+    C-X C-U " user defined completion
+    :fp     " copy current full path
+    :ip     " change to init path 
+
+    
+    :set spell " enable spelling
+    :set nospell " disable spelling
+    zg      " add word to spellfile, spell file, spell-file, spelling file, spellingfile
+    C-X C-D " definition
+    C-X C-K " dictionary
+    C-X C-X " suggestion
+    C-X C-L " line completion
+    C-X C-N " local keyword completion
+    C-X C-U " user defined completion
+    :fp     " copy current full path
+    :ip     " change to init path 
+    
+    :set spell " enable spelling
+    :set nospell " disable spelling
+    zg      " add word to spellfile, spell file, spell-file, spelling file, spellingfile
+    C-X C-D " definition
+    C-X C-K " dictionary
+    C-X C-X " suggestion
+    C-X C-L " line completion
+    C-X C-N " local keyword completion
+    C-X C-U " user defined completion
+    :fp     " copy current full path
+    :ip     " change to init path 
+    
+    :set spell " enable spelling
+    :set nospell " disable spelling
+    zg      " add word to spellfile, spell file, spell-file, spelling file, spellingfile
+    C-X C-D " definition
+    C-X C-K " dictionary
+    C-X C-X " suggestion
+    C-X C-L " line completion
+    C-X C-N " local keyword completion
+    C-X C-U " user defined completion
+    :fp     " copy current full path
+    :ip     " change to init path 
+
+
+
+    img_3d_draw : * : 3d draw, draw 3d
+    img,/Users/cat/try/draw13.png
+    
+    img_draw : * : image, my draw, draw, my image 
+    img,/Users/cat/try/draw1.png
+    img,/Users/cat/try/draw10.png
+    img,/Users/cat/try/draw11.png
+    img,/Users/cat/try/draw12.png
+    img,/Users/cat/try/draw13.png
+    img,/Users/cat/try/draw14.png
+    img,/Users/cat/try/draw15.png
+    img,/Users/cat/try/draw16.png
+    img,/Users/cat/try/draw17.png
+    img,/Users/cat/try/draw18.png
+    img,/Users/cat/try/draw19.png
+    img,/Users/cat/try/draw2.png
+    img,/Users/cat/try/draw20.png
+    img,/Users/cat/try/draw21.png
+    img,/Users/cat/try/draw22.png
+    img,/Users/cat/try/draw23.png
+    img,/Users/cat/try/draw3.png
+    img,/Users/cat/try/draw4.png
+    img,/Users/cat/try/draw5.png
+    img,/Users/cat/try/draw6.png
+    img,/Users/cat/try/draw7.png
+    img,/Users/cat/try/draw8.png
+    img,/Users/cat/try/draw9.png
+    img,/Users/cat/try/exitpath.png
+    img,/Users/cat/try/fold_left_right.png
+    img,/Users/cat/try/gitfastforward.png
+    img,/Users/cat/try/gitrebase.png
+    img,/Users/cat/try/glortho.png
+    img,/Users/cat/try/isbstpic.png
+    img,/Users/cat/try/javapath.png
+
+
+    Intellij_shortcut_key : * : Intellij shortcut key, format code, reformat code
     `[
         // intellij shortcut key
         Ctrl Shift      // comment block code
@@ -24,6 +220,8 @@
         Ctrl Left/Right // move cursor previous/next
         Ctrl Shift R    // find and replace
         Ctrl Shift j    // join line
+        Command F4      // close tab
+        ALT + Command L // reformat code 
     `] 
 
     git_command_all_cmds : * : git cmd, git command, git help, git tips
@@ -47,6 +245,11 @@
         :git rm --cached rm_repos_file                       // remove file only from local repository but from file system. 
         :git commit -m "msg" 
         :.git/info/exclude                                   // for local file that does't need to be shared, just add file or dir pattern
+        //
+        // update .gitignore file
+        :git rm --cached <file>                              // remove specific tracked file 
+        :git rm --cached -r .                                // remove all tracked files
+        :git add .                                          // track all files
         parse_git_branch(){
             git branch 2> /dev/null | sed -e 's/* \(.*\)/ \(\1)/'
         }
@@ -55,6 +258,7 @@
         \w - Full path
         \h - Host name
     `]
+    img,/Users/cat/try/gitfastforward.png
 
     git_fast_forward  : *
     https://ariya.io/2013/09/fast-forward-git-merge
@@ -121,6 +325,37 @@
     \Large
     \huge
     \Huge
+
+    lcircle_tikz_line_circle: *.tex,*.html : latex circle tikz, tikz circle, circle latex
+    \documentclass{article}
+    \usepackage{tikz}
+    \usepackage{amsmath, empheq}
+    \begin{document}
+        % TikZ picture with origin upper left
+        \begin{tikzpicture}[yscale=-1] 
+            % 4x4 grid
+            \draw (-2, 0) grid (6, 6);
+            % origin point
+            \draw [color=blue, fill=blue] (2, 4) circle (0.1);
+            % x-axis
+            \draw [thick,->] (-2, 4) -- (7, 4);
+            % y-axis
+            \draw [thick,->] (2, 6) -- (2, -1);
+            % origin label
+            \node at (2, 4.5) {(0, 0)};
+            \draw (2, 4) circle (2);
+            \draw [color=red, fill=red] (2, 2) circle(0.1);
+            \node at (2.5, 1.5){(0, r)};
+            \draw [color=red, fill=red] (-1, 4) circle(0.1);
+            \node at (-0.5, 4.5){(t, 0)};
+            \draw (2, 2)--(-1, 4);
+            \node at (0.5, 3.5){(x, y)};
+            \draw [color=black, fill=black] (0.24, 3.2) circle(0.1);
+        \end{tikzpicture}\\ \\
+        \centerline{Derive circle parametric equation}
+    \end{document}
+    img,/Users/cat/myfile/github/image/lcircle.pdf
+
 
     ltree_qtree : *.tex
     %\usepackage{tikz-qtree}
@@ -1293,16 +1528,83 @@
     :set spell " enable spelling
     :set nospell " disable spelling
     zg      " add word to spellfile, spell file, spell-file, spelling file, spellingfile
+    C-X C-U " e.g. jlist user defined completion
     C-X C-D " definition
     C-X C-K " dictionary
     C-X C-X " suggestion
     C-X C-L " line completion
     C-X C-N " local keyword completion
-    C-X C-U " user defined completion 
     :fp     " copy current full path
     :ip     " change to init path
     F7 copy
     F8 past
+
+
+    jregex: *.java : java regex, regex match group 
+    // example 1 
+    String pattern = "([a-z]+).([a-zA-Z-]+)(/)";
+    String[] strArr = {
+            "www.google.com/search?q=goog/nice",
+            "www.google.com/search?q=goog",
+            "http://www.google.msn.ca/search?q=goog",
+            "http://www.google.msn.ca/a/b/c/d"
+    };
+    Pattern r = Pattern.compile(pattern);
+    for(int i=0; i<strArr.length; i++) {
+        Matcher mat = r.matcher(strArr[i]);
+        if(mat.find()) {
+            Print.p("found=" + mat.group(0));
+        }
+    }
+    // example 2
+    Pattern r = Pattern.compile("captheorem", Pattern.CASE_INSENSITIVE);
+    Matcher mat = r.matcher("CAPTHEOREM");
+    if(mat.find()) {
+        Print.p("found=" + mat.group(0));
+    }
+    // example 3 
+    Pattern pattern = Pattern.compile("[0-9]{3}[-]?[0-9]{3}[-]?[0-9]{4}");
+    Matcher matcher = pattern.matcher("334-4467777 yes... 334666-4456 415-333-9674 whatever 4264491569");
+    while(matcher.find()) {
+        System.out.println(matcher.group());
+    }
+    // match number
+    Pattern pattern = Pattern.compile("\\d+");
+    Matcher matcher = pattern.matcher("334-4467777 yes... 334666-4456 415-333-9674 whatever 4264491569");
+    while(matcher.find()) {
+        System.out.println(matcher.group());
+    }
+    // match number
+    Pattern pattern = Pattern.compile("[a-zA-Z0-9_]+");
+    Matcher matcher = pattern.matcher("This is case_INSENSITIVE PREPOSITION");
+    while(matcher.find()) {
+        Print.pbl(matcher.group());
+    }
+    // match word 
+    Pattern pattern = Pattern.compile("[A-Z]+");
+    Matcher matcher = pattern.matcher("This is case insensitive PREPOSITION");
+    while(matcher.find()) {
+        Print.pbl(matcher.group());
+    }
+    // excluding a,n, and space
+    Pattern pattern = Pattern.compile("[^an ]+");
+    Matcher matcher = pattern.matcher("This is banana");
+    while(matcher.find()) {
+        Print.pbl(matcher.group());
+    }
+
+
+    jgetresource : *.java : java getresource, java getclassloader, java classloader
+    ClassLoader cl = ClassLoader.getSystemClassLoader();
+    URL[] urls = ((URLClassLoader) cl).getURLs();
+    for (URL url: urls) {
+        System.out.println(url.getFile());
+    }
+    String classLoaderPath = getClass().getClassLoader().getResource("").getPath();
+    String resourcePath = getClass().getResource("").getPath();
+    Print.pbl("classLoaderPath=" + classLoaderPath);
+    Print.pbl("resourcePath   =" + resourcePath);
+    img, /Users/cat/myfile/github/image/getresource.png
 
     jsubstring_substring_subList_prefix_suffix : *.java
     String line = "0123456789";
@@ -1319,13 +1621,13 @@
     } 
 
 
-    jtry_try_catch : *.java
+    jtry_try_catch : *.java : java try catch, java catch block
     try{
     }catch(IOException e){
         e.printStackTrace();
     }
 
-    jbst_Binary_Tree : *.java
+    jbst_Binary_Tree : *.java : java binary tree, java binary search tree, binary search tree, bst
     BST b1 = new BST();
     b1.insert(10);
     b1.insert(5);
@@ -1340,18 +1642,16 @@
     jclassfile_import_classfile: *.java 
     import classfile.*;
 
-    jqueue_copy: *.java 
-    Queue<Node> q = new LinkedList(oldQueue);
-
-    jda_java_data_structure : *.java 
+    jda_java_data_structure : *.java  : java list or queue
     List<String> list = new ArrayList<String>();
     List<String> list = new LinkedList<String>();
     List<String> list = new Stack<String>();
     List<String> list = new Vector<String>();
     Queue<String> queue = new ArrayList<String>();
     Queue<String> queue = new PriorityQueue<String>();
+    Queue<Node> q = new LinkedList(oldQueue);
 
-    jpriorityqueue_Interval_Example : *.java
+    jpriorityqueue_Interval_Example : *.java : java priority queue, priority queue : java compare
     class Interval implements Comparable<Interval>{
     int start;
     int end;
@@ -1393,8 +1693,7 @@
     //        Aron.end();
     //    }
     //} 
-
-    jpriority_queue_full_example : *.java 
+    //
     Queue<Interval> queue = new PriorityQueue<Interval>();
     Interval ter1 = new Interval(1, 4, 10);
     Interval ter2 = new Interval(4, 4, 2);
@@ -1406,45 +1705,36 @@
         Print.p(queue.poll());
     }
 
-    jite_Iterator : *.java
+    jite_Iterator : *.java : java iterator list, java list iterator
     List<String> list = ArrayList<String>(); 
     Iterator<String> ite = list.iterator();
-
     Iterator ite = list.iterator();
     while(ite.hasNext()){
         Print.p(ite.next());
     }
 
-    jpriority_PriorityQueue: *.java 
-    Queue<String> queue = new PriorityQueue<String>(); 
-
-    jset_set_to_list: *.java
+    jset_set_to_list: *.java : java set init set
     Set<String> set1 = new HashSet<String>(Arrays.asList("cat", "dog"));
     List<String> list = new ArrayList<>(set1);
     Set<String> set2 = new HashSet<>(list);
+    Set<String> set3 = new HashSet<String>(Arrays.asList(1, 2));
+    Set<Integer> set4 = new HashSet<Integer>(Arrays.asList("cat", "dog"));
     Aron.printSet(set1);
+    Aron.printSet(set2);
+    Aron.printSet(set3);
+    Aron.printSet(set4);
     Aron.printList(list);
 
-    jset_Integer: *.java
-    Set<String> set = new HashSet<String>(Arrays.asList(1, 2));
-
-    jset_String: *.java
-    Set<Integer> set = new HashSet<Integer>(Arrays.asList("cat", "dog"));
-
-    jthrow_throw_new_IllegalArgumentException
+    jthrow_throw_new_IllegalArgumentException : *.java : java throw illegal exception
     throw new IllegalArgumentException("str must be not null.");
 
-    jtime_stop_watch : *.java
+    jtime_stop_watch : *.java : java time timer, java stopwatch
     long ti, tf;
     ti = System.currentTimeMillis();
     tf = System.currentTimeMillis();
     Print.pbl("Finish. Total time:" + (tf - ti));
 
-    jarray_array_to_list : *.java
-    String[] array = str.split("\\s+");
-    List<String> list = Arrays.asList(array);
-
-    jlist_merge_two_lists : *.java : java list
+    jlist_merge_two_lists : *.java : java list merge two list, merge list
     List<String> list1 = new ArrayList<>(Arrays.asList("cat", "dog"));
     List<String> list2 = new ArrayList<>(Arrays.asList("Nothing"));
     List<String> result = Stream.concat(list1.stream(), list2.stream())
@@ -1452,76 +1742,67 @@
             .collect(Collectors.toList());
 
 
-    jlist_list_to_array: *.java : array to list
+    jlist_list_to_array: *.java : java array to list, java arr to list
     List<String> list = Arrays.asList("cat", "dog", "cow");
     String[] arr = list.toArray(new String[list.size()]);
+    String[] array = str.split("\\s+");
+    List<String> list = Arrays.asList(array);
+    img,/Users/cat/try/draw10.png ,/Users/cat/try/draw11.png ,/Users/cat/try/draw12.png ,/Users/cat/try/draw13.png ,/Users/cat/try/draw14.png
 
-    jlist_to_set: *.java
+    jlist_to_set: *.java : java list to set 
     Set<String> set1 = new HashSet<String>(Arrays.asList("cat", "dog"));
     List<String> list = new ArrayList<>(set1);
     Set<String> set2 = new HashSet<>(list);
     Aron.printSet(set1);
     Aron.printList(list);
 
-    jlist_array_list : *.java
-    String[] array = str.split("\\s+");
-    List<String> list = Arrays.asList(array);
-
-    jlist_copy_list_with_lambda : *.java
+    jlist_copy_list_with_lambda : *.java : java copy list with lambda
     List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3)); 
     List<Integer> ll = list.stream().collect(Collectors.toList()); 
     Aron.printList(ll);
 
-    jlist_to_iterator_Integer: *.java 
+    jlist_to_iterator: *.java : java list to iterator, java iterator list
     List<Integer> list = Arrays.asList(1, 2, 3); 
     Iterator ite = list.iterator();
     while(ite.hasNext()){
         Print.p(ite.next());
     }
-
-    jlist_to_iterator_String: *.java 
+    //
     List<String> list = Arrays.asList("cat", "cow", "crab", "camel", "chowchow"); 
     Iterator ite = list.iterator();
     while(ite.hasNext()){
         Print.p(ite.next());
     }
 
-
-    jlist_Integer_init: *.java 
+    jlist_Integer_init: *.java : java list integer
     // immutable list
     List<Integer> list = Arrays.asList(1, 2, 3); 
     // mutable list
     List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));
 
 
-    jlist_String_init: *.java 
+    jlist_String_init: *.java  : java list string
     // immutable list
     List<String> list = Arrays.asList("cat", "dog", "cow"); 
     // mutable list
     List<String> list = new ArrayList<>(Arrays.asList("cat", "dog", "cow"));
 
-    jlist_Node: *.java 
+    jlist_Node: *.java : java list node
     List<Node> list = new ArrayList<Node>();
 
-    jlist_String : *.java 
+    jlist_String : *.java  : java list string
     List<String> list = new ArrayList<String>();
 
-    jlist_Integer: *.java 
+    jlist_Integer: *.java  : java list integer
     List<Integer> list = new ArrayList<Integer>();
 
-    jlist_Iterator: *.java 
-    List<String> list = new String<String>();
-    for(String s : list){
-        Print.pl(s);
-    }
-
-    jlist2d_Integer: *.java 
+    jlist2d_Integer: *.java : java list2d integer
     List<ArrayList<Integer>> list2d = new ArrayList<ArrayList<Integer>>();
 
-    jlist2d_String: *.java 
+    jlist2d_String: *.java  : java list2d string
     List<ArrayList<String>> list2d = new ArrayList<ArrayList<String>>();
 
-    jran_random: *.java 
+    jran_random: *.java  : java random number
     Random ran = new Random();
     // 0 - 9
     int num = ran.nextInt(10);
@@ -1531,7 +1812,7 @@
     public static <T> void printList(List<T> list) {
     }
 
-    jclass_dummy_class : *.java
+    jclass_dummy_class : *.java : java class 
     class MyClass{
         public MyClass(){
         }
@@ -1539,25 +1820,25 @@
         }
     } 
 
-    jvector_String : *.java 
+    jvector_String : *.java : java vector string 
     List<String> list = new Vector<String>();
 
-    jvector_Integer: *.java 
+    jvector_Integer: *.java  : java vector integer
     List<Integer> list = new Vector<Integer>();
     
-    jqueue_String : *.java
+    jqueue_String : *.java : java arraylist string
     Queue<String> queue = new ArrayList<String>();
 
-    jqueue_Integer: *.java
+    jqueue_Integer: *.java : java arraylist integer
     Queue<Integer> queue = new ArrayList<Integer>();
 
-    jstack_Integer: *.java
+    jstack_Integer: *.java : java stack integer
     Stack<Integer> stack = new Stack<Integer>();
 
-    jstack_String: *.java
+    jstack_String: *.java : java stack string
     Stack<String> stack = new Stack<String>();
 
-    jtoken_has_more_token : *.java
+    jtoken_has_more_token : *.java : java string tokenizer
     StringTokenizer stoken = new StringTokenizer(exp, "+-/*", true);
     List<String> list = new ArrayList<String>();
     while(stoken.hasMoreTokens()){
@@ -1566,7 +1847,18 @@
         System.out.println(token);
     }
 
-    jmap_list_Integer_MapEntry: *.java
+    jmap_String_to_SetString: *.java: java map string to set, string_to_set, map_string_set
+    Map<String, Set<String>> map = new HashMap<>();
+    Set<String> set1 = new HashSet<>(Arrays.asList("cat", "dog"));
+    Set<String> set2 = new HashSet<>(Arrays.asList("cat", "dog", "cow"));
+    map.put("key1", set1);
+    map.put("key2", set2);
+    for(Map.Entry<String, Set<String>> entry : map.entrySet()){
+        Print.pbl("[" + entry.getKey() + "]->[" + entry.getValue() + "]");
+        Print.line();
+    }
+
+    jmap_list_Integer_MapEntry: *.java : java map integer, map integer, interger map
     Map<String, List<Integer>> map = new HashMap<>();
     List<Integer> list1 = new ArrayList<>(Arrays.asList(1, 2));
     List<Integer> list2 = new ArrayList<>(Arrays.asList(3, 4));
@@ -1580,7 +1872,7 @@
         Print.line();
     }
 
-    jmap_list_String_MapEntry: *.java
+    jmap_list_String_MapEntry: *.java : java map string, map string list java
     Map<String, List<String>> map = new HashMap<>();
     List<String> list1 = new ArrayList<>(Arrays.asList("v1", "v2"));
     List<String> list2 = new ArrayList<>(Arrays.asList("vv1", "vv2"));
@@ -1595,7 +1887,7 @@
     }
 
 
-    jmap_ListList_init_iterator : *.java
+    jmap_ListList_init_iterator : *.java : java map to string of list of list, map string list of list
     Map<String, List<List<String>>> map1 = new HashMap<>();
     Map<String, List<List<String>>> map2 = new HashMap<>();
     // mutable list
@@ -1618,7 +1910,7 @@
         }
     }
 
-    jmap_print_map : *.java
+    jmap_print_map : *.java : java map integer to integer entry, map entry 
     Map<Integer, Integer> map = new HashMap<Integer, Integer>();
     for(Map.Entry<Integer, Integer> entry : map.entrySet()){
         System.out.println("[" + entry.getKey() + " , " + entry.getValue() + "]");
@@ -1656,13 +1948,22 @@
         }
     }
 
-    jmap_simple_String_Integer : *.java
+    jmap_simple_String_Integer : *.java : java map declaration
     Map<Integer, Integer> map = new HashMap<Integer, Integer>();
     Map<Integer, String> map = new HashMap<String, String>();
     Map<String, String> map = new HashMap<String, String>();
     Map<String, Integer> map = new HashMap<String, String>();
     Map<String, List<String>> map = new HashMap<String, List<String>>();
     Map<String, List<Integer>> map = new HashMap<String, List<Integer>>();
+    Map<String, Set<String>> map = new HashMap<String, Set<String>>();
+    //
+    Map<Integer, Integer> map = new HashMap<>();
+    Map<Integer, String> map = new HashMap<>();
+    Map<String, String> map = new HashMap<>();
+    Map<String, Integer> map = new HashMap<>();
+    Map<String, List<String>> map = new HashMap<>();
+    Map<String, List<Integer>> map = new HashMap<>();
+    Map<String, Set<String>> map = new HashMap<>();
 
     jme : *.java  
     public static List<String> get(){
