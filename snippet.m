@@ -1,3 +1,42 @@
+    chinese_need : * : chinese need ad, ad chinese, vansky
+    Hi 
+    你还需要有人设计网站吗？
+    Aron
+    你还需要有人设计App
+    Hi Lee,
+    do you still need someone to design App.
+    你还需要有人设计App
+    Cell: 778-232-2175
+    Aron
+    Hi
+    你还需要送机
+    //
+    $99
+    网站设计
+    电子商务网站设计
+    个人网站设计
+    Phone: 778-232-2175
+    Iphone和Android应用程序设计
+    //
+    Email: richmondservice00@gmail.com
+    Iphone and android App design
+    website design
+    e-commerce website design
+    personal website design
+
+    haskell_file_stuff :*: haskell list directory, haskell list file
+    listDirectory 
+    doesFileExist
+    doesDirectoryExist
+    takeFileName gives "file.ext"
+    takeDirectory gives "/directory"
+    takeExtension gives ".ext"
+    dropExtension gives "/directory/file"
+    takeBaseName gives "file"
+    "/directory" </> "file.ext".
+    "/directory/file" <.> "ext".
+    "/directory/file.txt" -<.> "ext".
+
     git_ignore_file :*: git ignore, ignore file
     **/*.class
     # Package Files #
@@ -34,7 +73,7 @@
     jgradle_gradle : * : java gradle, gradle resources, gradle add resources 
     img, /Users/cat/myfile/github/image/gradle_resources.png
 
-    jgradle_gradle : * : java gradle, gradle tutorial, build gradle
+    jgradle_gradle : * : java gradle, gradle tutorial, build gradle, gradle add local jar
     Gradle Build Tutorial
     0. Check Gradle version
        gradle -v
@@ -84,7 +123,38 @@
        project/build.gradle
        add jar files to project/libs
        No modificaiton for build.gradle
-   
+       //
+    9. Change Gradle project layout
+       https://docs.gradle.org/current/userguide/java_plugin.html
+       //
+    10. use local dependency jar
+        // make sure you restart your Intellij
+        def repositoryPath = '/Users/cat/myfile/github/JavaLib/jar'
+        repositories {
+            flatDir {
+                dirs repositoryPath
+            }
+        }
+        dependencies {
+            compile name: 'AronLib'
+        }
+        // make sure you restart your Intellij
+        // without using flatDir
+        dependencies {
+            compile files('/Users/cat/myfile/github/JavaLib/jar/AronLib.jar')
+        }
+        // /Users/cat/myfile/github/java/GradleLocalJarExmaple
+    11. add local jar to gradle, it works now!
+        create Lib under [root.Project.name="MyProject"] from setting.gradle
+        add following to build.gradle
+        dependencies {
+           compile fileTree('Lib')  // this includes all the files under 'Lib'
+        }
+        // working example
+        // ref: http://gradle.1045684.n5.nabble.com/Gradle-Make-a-3rd-party-jar-available-to-local-gradle-repository-td1431953.html
+        /Users/cat/myfile/github/java/GradleLibID
+        img, /Users/cat/myfile/github/image/gradle_add_local_jar.png
+           
     
     java_code : * : java code, all java code, java screenshot, java shot, screenshot java code
     /Users/cat/myfile/github/java/TextAreaLineHeightExample/src/Main.java
@@ -119,6 +189,27 @@
     C-X C-U " user defined completion
     :fp     " copy current full path
     :ip     " change to init path 
+
+    html_title :*: html write, write html, ht
+    <div class="mytitle">
+    My Title
+    </div>
+    <div class="mytext">
+    The App shows how to use simple animation on iPhone.<br>
+    1. Load images to array<br>
+    </div><br>
+    <div class="cen">
+    <img src="http://localhost/zsurface/image/kkk.png" width="40%" height="40%" /><br>
+    <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
+    </div>
+
+    html_code :*: html code, code html
+    <pre class="mycode">
+    <span class="bo">from:sender</span>
+    getLine::IO String
+    putStrLn::String-> IO()
+    randomRIO::(Random a) => (a, a) -> IO a
+    </pre>
 
     
     :set spell " enable spelling
@@ -239,6 +330,8 @@
         :git diff --stat hash1  hash2                        // diff two commits from two hashes 
         :git log -- specific_file                            // get log on specific file
         :git commit --amend -m "new message"                 // change the most recent message, amend your most recent message.
+        :git rev-list --all --remotes --pretty=oneline foo   // show all previous commit on foo 
+        :git rev-list --all foo                              // show all previous commit on foo 
         :git stash                                           // save your modified tracked files to a stack and that you can reapply late. 
         :git stash list                                      // list all the stashes
         :git rm -r myfile                                    // remove file from local repository and file system.
@@ -259,6 +352,23 @@
         \h - Host name
     `]
     img,/Users/cat/try/gitfastforward.png
+
+    git_conf  : * : git config file github bitbucket
+    [core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        ignorecase = true
+        precomposeunicode = false
+    [remote "origin"]
+        url = https://github.com/bsdshell/tiny3.git
+        url = https://zsurface@bitbucket.org/zsurface/tiny3.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+    [branch "master"]
+        remote = origin
+        merge = refs/heads/master
+    
 
     git_fast_forward  : *
     https://ariya.io/2013/09/fast-forward-git-merge
@@ -281,7 +391,17 @@
     echo '1[' . &completefunc .']' . '2[' . &completefunc .']'
     3sleep
     
-    google_book_path: *
+
+    html_code : * : html code, code html
+    <pre class="cc">
+       create Lib under [root.Project.name="MyProject"] from setting.gradle
+       add following to build.gradle
+       dependencies {
+           compile fileTree('Lib')  // this includes all the files under 'Lib'
+       }
+    </pre>
+
+    google_book_path: * : google book, pdf book
     Reading multiple thread in linkedlist, queue and hashmap.
     /Users/cat/GoogleDrive/Books/thread_concurrent_linkedlist.pdf
 
@@ -1182,7 +1302,19 @@
     DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy-HH:mm:ss");
     LocalDateTime time1 = LocalDateTime.parse("30/09/1970-18:34:13", format);
 
-    jmain_main_method : *.java
+    jmain_main_method : *.java : java main
+    import java.util.*;
+    import java.io.*;
+    import classfile.*;
+    public class Main{
+        public static void main(String[] args) {
+        }
+        static void test0(){
+        Aron.beg();
+        Aron.end();
+        }
+    }
+    //
     import java.util.*;
     import java.io.*;
     import classfile.*;
@@ -1592,6 +1724,13 @@
     while(matcher.find()) {
         Print.pbl(matcher.group());
     }
+    // match line
+    String str = "  This is case insensitive_PREPOSITION 123 ";
+    Pattern pattern = Pattern.compile("^\\s*[\\w ]+\\s*");
+    Matcher matcher = pattern.matcher(str);
+    while(matcher.find()) {
+        Print.pbl(matcher.group());
+    }
 
 
     jgetresource : *.java : java getresource, java getclassloader, java classloader
@@ -1604,6 +1743,7 @@
     String resourcePath = getClass().getResource("").getPath();
     Print.pbl("classLoaderPath=" + classLoaderPath);
     Print.pbl("resourcePath   =" + resourcePath);
+    // /Users/cat/myfile/github/java/GradleResourceExample
     img, /Users/cat/myfile/github/image/getresource.png
 
     jsubstring_substring_subList_prefix_suffix : *.java
@@ -1734,6 +1874,12 @@
     tf = System.currentTimeMillis();
     Print.pbl("Finish. Total time:" + (tf - ti));
 
+    jfile_path_base_name: *.java : java file path base name, java path extension
+    String fName = "/Users/cat/myfile/github/java/text/ht/file.txt";
+    Print.pbl(FilenameUtils.getPath(fName));     // [Users/cat/myfile/github/java/text/ht/]
+    Print.pbl(FilenameUtils.getBaseName(fName)); // [file]
+    Print.pbl(FilenameUtils.getName(fName));     // [file.txt]
+
     jlist_merge_two_lists : *.java : java list merge two list, merge list
     List<String> list1 = new ArrayList<>(Arrays.asList("cat", "dog"));
     List<String> list2 = new ArrayList<>(Arrays.asList("Nothing"));
@@ -1781,11 +1927,14 @@
     List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));
 
 
-    jlist_String_init: *.java  : java list string
+    jlist_String_init: *.java  : java list init, java list init string
     // immutable list
-    List<String> list = Arrays.asList("cat", "dog", "cow"); 
+    List<String> list1 = Arrays.asList("cat1", "dog1", "cow1"); 
+    List<String> list2 = Arrays.asList("cat2", "dog2", "cow2"); 
     // mutable list
-    List<String> list = new ArrayList<>(Arrays.asList("cat", "dog", "cow"));
+    List<String> list3 = new ArrayList<>(Arrays.asList("do the follows", "different from", "exchange for"));
+    List<String> list4 = new ArrayList<>(Arrays.asList("withdraw", "negotiation", "withdrawal-none"));
+
 
     jlist_Node: *.java : java list node
     List<Node> list = new ArrayList<Node>();
